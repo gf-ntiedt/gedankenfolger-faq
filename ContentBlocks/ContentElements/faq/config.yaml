@@ -1,0 +1,16 @@
+name: 'gedankenfolger/faq'
+typeName: gedankenfolger_faq
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  - identifier: storageFolder
+    type: Select
+    renderType: selectMultipleSideBySide
+    foreign_table: 'pages'
+    foreign_table_where: 'AND {#pages}.{#doktype}=254 ORDER BY pages.sorting'
+    size: 5
+    maxitems: 1
+  - identifier: openFirst
+    type: Checkbox
+

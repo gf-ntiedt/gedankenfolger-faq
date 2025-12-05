@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:asset.css identifier="gf-slider-assets">
+        .popover {
+        max-width: 100%;
+        }
+    </f:asset.css>
+    <f:variable name="popover_content">{f:render(section:'PopoverContent',arguments:_all)}</f:variable>
+    <div class="btn-toolbar mb-2" role="toolbar" aria-label="Content element toolbar">
+        <div class="btn-group me-2" role="group" aria-label="Group of links">
+            <button type="button" title="UID" class="btn btn-default btn-borderless" disabled>UID: {uid}</button>
+            
+            <f:link.typolink
+                parameter="{pid}#c{uid}"
+                target="_blank"
+                absolute="1"
+                title="Jump to element position at the frontend"
+                class="btn btn-default btn-borderless"
+            ><core:icon identifier="actions-eye-link" size="small" /></f:link.typolink>
+            
+            <button type="button" class="btn btn-default btn-borderless" data-bs-toggle="popover" data-bs-title="Information" data-bs-content="{popover_content}" data-bs-html="true" data-bs-trigger="toggle"><core:icon identifier="actions-info-circle" /></button>
+            
+            <f:if condition="{showEditLink}">
+                <be:link.editRecord uid="{uid}" table="{f:if(condition:table,then:table,else:'tt_content')}" returnUrl="{f:be.uri(route:'web_layout',parameters:'{id: pid}')}" title="Edit" class="btn btn-default btn-borderless"><core:icon identifier="actions-open" /></be:link.editRecord>
+            </f:if>
+            
+            <f:if condition="{showGoToLink}">
+                <f:be.link route="web_layout" parameters="{id: uid}" title="Go to" class="btn btn-default btn-borderless"><core:icon identifier="apps-pagetree-drag-move-into" /></f:be.link>
+            </f:if>
+        </div>
+    </div>
+</html>
+
+<f:section name="PopoverContent">
+    <div class="d-flex pb-1">
+        <div>UID:</div>
+        <div class="flex-grow">{uid}</div>
+    </div>
+    <div class="d-flex pb-1">
+        <div>Created:</div>
+        <div class="flex-grow"><f:format.date format="d.m.Y - H:i:s">{crdate}</f:format.date></div>
+    </div>
+    <div class="d-flex pb-1">
+        <div>Changed:</div>
+        <div class="flex-grow"><f:format.date format="d.m.Y - H:i:s">{tstamp}</f:format.date></div>
+    </div>
+</f:section>

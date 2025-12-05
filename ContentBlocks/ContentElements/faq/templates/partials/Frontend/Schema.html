@@ -1,0 +1,17 @@
+<schema:type.fAQPage/>
+
+
+<f:for each="{faqs}" as="faq">
+    <schema:type.Question
+        -isMainEntityOfWebPage="2"
+        -as="mainEntity"
+        name="{faq.question}"
+        inLanguage="{language.hreflang}"
+    >
+        <schema:type.Answer
+            -as="acceptedAnswer"
+            text="{faq.answer -> f:format.raw()}"
+        >
+        </schema:type.Answer>
+    </schema:type.Question>
+</f:for>

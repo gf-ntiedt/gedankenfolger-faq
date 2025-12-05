@@ -1,0 +1,28 @@
+name: 'gedankenfolger/faq-item'
+table: tx_gedankenfolger_faq_item
+prefixFields: false
+labelField: question
+fields:
+  - identifier: question
+    type: Text
+    required: true
+  - identifier: answer
+    type: Textarea
+    enableRichtext: true
+  - identifier: categories
+    type: Relation
+    allowed: 'sys_category'
+    relationship: oneToOne
+    maxitems: 1
+  - identifier: colorVariant
+    type: Select
+    renderType: selectSingle
+    items:
+      - value: standard
+        label: 'Standard'
+      - value: primary
+        label: 'Primary'
+      - value: secondary
+        label: 'Secondary'
+      - value: warning
+        label: 'Warning'

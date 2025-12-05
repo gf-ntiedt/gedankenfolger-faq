@@ -1,0 +1,24 @@
+{
+    "name": "gedankenfolger/gedankenfolger-faq",
+    "description": "TYPO3 13 FAQ extension with Content Blocks, Site Set, Schema, JS, SCSS.",
+    "version": "13.0.0",
+    "type": "typo3-cms-extension",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "friendsoftypo3/content-blocks": "^1.3",
+        "brotkrueml/schema": "^4.0",
+        "wapplersystems/ws-scss": "^13.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gedankenfolger\\GedankenfolgerFaq\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "gedankenfolger_faq"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+categories:
+  GedankenfolgerFaq:
+    label: 'Gedankenfolger FAQ'
+
+settings:
+  faq.parameterName:
+    label: 'URL parameter for deep-linking'
+    type: string
+    default: 'faq'
+    category: GedankenfolgerFaq
+  faq.schemaEnabled:
+    label: 'Output schema.org FAQPage'
+    type: bool
+    default: true
+    category: GedankenfolgerFaq

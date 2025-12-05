@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="gedankenfolger_faq">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>FAQ Item</source>
+      </trans-unit>
+      <trans-unit id="question.label">
+        <source>Question</source>
+      </trans-unit>
+      <trans-unit id="answer.label">
+        <source>Answer</source>
+      </trans-unit>
+      <trans-unit id="categories.label">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="colorVariant.label">
+        <source>Color variant</source>
+      </trans-unit>
+      <trans-unit id="colorVariant.items.standard.label">
+        <source>Standard</source>
+      </trans-unit>
+      <trans-unit id="colorVariant.items.primary.label">
+        <source>Primary</source>
+      </trans-unit>
+      <trans-unit id="colorVariant.items.secondary.label">
+        <source>Secondary</source>
+      </trans-unit>
+      <trans-unit id="colorVariant.items.warning.label">
+        <source>Warning</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="gedankenfolger_faq">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>FAQ</source>
+      </trans-unit>
+      <trans-unit id="storageFolder.label">
+        <source>Storage folder (sys_folder)</source>
+      </trans-unit>
+      <trans-unit id="openFirst.label">
+        <source>Open first item on load</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

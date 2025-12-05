@@ -1,0 +1,11 @@
+page {
+  includeJSFooter {
+    gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/JavaScript/faq.js
+    gedankenfolger_faq.forceOnTop = 1
+  }
+
+  includeCSS {
+    gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Scss/faq.scss
+    gedankenfolger_faq.outputfile = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
+  }
+}

@@ -1,0 +1,3 @@
+# Defaults for FAQ CE (Site Set constants)
+faq.parameterName = faq
+faq.schemaEnabled = 1

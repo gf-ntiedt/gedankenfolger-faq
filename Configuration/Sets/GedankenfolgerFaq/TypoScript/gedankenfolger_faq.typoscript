@@ -1,0 +1,20 @@
+tt_content.gedankenfolger_faq {
+  settings {
+    parameterName = {$faq.parameterName}
+    schemaEnabled = {$faq.schemaEnabled}
+  }
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_gedankenfolger_faq_item
+      pidInList.field = storageFolder
+      orderBy = sorting
+      as = faqs
+    }
+    100 = site-language
+    100 {
+        as = language
+    }
+  }
+}
