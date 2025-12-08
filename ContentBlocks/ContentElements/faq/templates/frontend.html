@@ -4,21 +4,20 @@
 
 <div class="gf-faq" data-faq-parameter="{settings.parameterName}">
   <f:if condition="{faqs}">
-    <ul class="gf-faq__list" role="list">
-      {_all -> f:debug()}
+    <div class="gf-faq__list" role="list">
       <f:for each="{faqs}" as="faq" iteration="iter">
-        <li class="gf-faq__item gf-faq__item--{faq.data.colorVariant -> f:or(alternative: 'standard')}" data-faq-id="{faq.data.uid}">
-          <button class="gf-faq__question" aria-expanded="{f:if(condition: openFirst && iter.isFirst, then: 'true', else: 'false')}" aria-controls="faq-panel-{faq.data.uid}" id="faq-control-{faq.data.uid}">
+        <details id="faq-item{faq.data.uid}" class="gf-faq__item gf-faq__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{openFirst} && {iter.isFirst}', then: 'open')}>
+          <summary class="gf-faq__question">
             <span class="gf-faq__question-text">{faq.data.question}</span>
-          </button>
-          <div class="gf-faq__answer" id="faq-panel-{faq.data.uid}" role="region" aria-labelledby="faq-control-{faq.data.uid}">
+          </summary>
+          <div class="gf-faq__answer">
             <div class="gf-faq__answer-inner">
               {faq.data.answer -> f:format.raw()}
             </div>
           </div>
-        </li>
+        </details>
       </f:for>
-    </ul>
+    </div>
 
     <f:if condition="{settings.schemaEnabled}">
         <f:render partial="Frontend/Schema" arguments="{language:language,faqs:faqs}" />
