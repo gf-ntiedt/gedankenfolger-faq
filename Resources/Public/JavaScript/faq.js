@@ -1,79 +1,34 @@
 (() => {
-  const initFaq = (root) => {
-    const list = root.querySelector('.gf-faq__list');
-    if (!list) return;
-    const paramName = root.getAttribute('data-faq-parameter') || 'faq';
-
-    const items = [...root.querySelectorAll('.gf-faq__item')];
-    const byId = new Map(items.map((el) => [el.getAttribute('data-faq-id'), el]));
-
-    const closeAll = () => {
-      items.forEach((el) => {
-        const btn = el.querySelector('.gf-faq__question');
-        const panel = el.querySelector('.gf-faq__answer');
-        if (btn && panel) {
-          btn.setAttribute('aria-expanded', 'false');
-          panel.hidden = true;
-        }
-      });
-    };
-
-    const openItem = (el, scroll = false) => {
-      const btn = el.querySelector('.gf-faq__question');
-      const panel = el.querySelector('.gf-faq__answer');
-      if (!btn || !panel) return;
-      closeAll();
-      btn.setAttribute('aria-expanded', 'true');
-      panel.hidden = false;
-      if (scroll) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-
-    // Setup initial state
-    items.forEach((el, idx) => {
-      const btn = el.querySelector('.gf-faq__question');
-      const panel = el.querySelector('.gf-faq__answer');
-      if (!btn || !panel) return;
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      panel.hidden = !expanded;
-      btn.addEventListener('click', () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        if (isOpen) {
-          btn.setAttribute('aria-expanded', 'false');
-          panel.hidden = true;
-        } else {
-          openItem(el, false);
-          const id = el.getAttribute('data-faq-id');
-          if (id) {
-            const url = new URL(window.location.href);
-            url.searchParams.set(paramName, id);
-            history.replaceState(null, '', url);
+  /**
+   * Minimale Hash-Navigation für FAQ-Details
+   * <details> funktioniert vollständig nativ, JS handled nur Deep-Linking
+   */
+  const handleFaqHash = () => {
+    const hash = window.location.hash;
+    const match = hash.match(/^#faq-(\d+)$/);
+    
+    if (match) {
+      const faqId = match[1];
+      const details = document.getElementById(`faq-item${faqId}`);
+      
+      if (details) {
+        // Alle anderen Details schließen
+        document.querySelectorAll('.gf-faq__item').forEach(el => {
+          if (el.id !== `faq-item${faqId}`) {
+            el.open = false;
           }
-        }
-      });
-    });
-
-    // Deep-linking
-    const url = new URL(window.location.href);
-    const deeplink = url.searchParams.get(paramName);
-    if (deeplink && byId.has(deeplink)) {
-      openItem(byId.get(deeplink), true);
+        });
+        
+        // Ziel-Detail öffnen und in Sicht scrollen
+        details.open = true;
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
-
-  const selector = '.gf-faq';
-  document.querySelectorAll(selector).forEach(initFaq);
-
-  // If content is injected dynamically
-  const obs = new MutationObserver((mutations) => {
-    mutations.forEach((m) => {
-      m.addedNodes.forEach((n) => {
-        if (n.nodeType === 1 && n.matches && n.matches(selector)) {
-          initFaq(n);
-        }
-      });
-    });
-  });
-  obs.observe(document.documentElement, { childList: true, subtree: true });
+  
+  // On Page Load
+  document.addEventListener('DOMContentLoaded', handleFaqHash);
+  
+  // On Hash Change (z.B. via Browser-Navigation)
+  window.addEventListener('hashchange', handleFaqHash);
 })();
