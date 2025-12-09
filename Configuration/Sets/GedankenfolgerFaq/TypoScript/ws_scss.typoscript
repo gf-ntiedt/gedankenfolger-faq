@@ -1,0 +1,13 @@
+plugin.tx_wsscss.variables {
+  gf_faq_rootname = gedankenfolger_faq
+
+  gf_faq_color_standard = {$faq.color.standard}
+  gf_faq_bgcolor_standard = {$faq.bgcolor.standard}
+  gf_faq_color_primary = {$faq.color.primary}
+  gf_faq_bgcolor_primary = {$faq.bgcolor.primary}
+  gf_faq_color_secondary = {$faq.color.secondary}
+  gf_faq_bgcolor_secondary = {$faq.bgcolor.secondary}
+  gf_faq_color_tertiary = {$faq.color.tertiary}
+  gf_faq_bgcolor_tertiary = {$faq.bgcolor.tertiary}
+  gf_faq_font_family = {$faq.font.family}
+}

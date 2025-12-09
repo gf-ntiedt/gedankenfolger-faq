@@ -1,15 +1,75 @@
 categories:
   GedankenfolgerFaq:
     label: 'Gedankenfolger FAQ'
+  GedankenfolgerFaq.settings:
+    label: 'Settings'
+    parent: GedankenfolgerFaq
+  GedankenfolgerFaq.style:
+    label: 'Style'
+    parent: GedankenfolgerFaq
 
 settings:
   faq.parameterName:
     label: 'URL parameter for deep-linking'
     type: string
     default: 'faq'
-    category: GedankenfolgerFaq
+    category: GedankenfolgerFaq.settings
   faq.schemaEnabled:
     label: 'Output schema.org FAQPage'
     type: bool
     default: true
-    category: GedankenfolgerFaq
+    category: GedankenfolgerFaq.settings
+
+  faq.color.standard:
+    label: 'Standard color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#ffffff'
+    category: GedankenfolgerFaq.style
+  faq.bgcolor.standard:
+    label: 'Standard background color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#2f3b4a'
+    category: GedankenfolgerFaq.style
+  faq.color.primary:
+    label: 'Primary color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#000000'
+    category: GedankenfolgerFaq.style
+  faq.bgcolor.primary:
+    label: 'Primary background color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#005bbb'
+    category: GedankenfolgerFaq.style
+  faq.color.secondary:
+    label: 'Secondary color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#000000'
+    category: GedankenfolgerFaq.style
+  faq.bgcolor.secondary:
+    label: 'Secondary background color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#6c757d'
+    category: GedankenfolgerFaq.style
+  faq.color.tertiary:
+    label: 'Tertiary color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#000000'
+    category: GedankenfolgerFaq.style
+  faq.bgcolor.tertiary:
+    label: 'Tertiary background color'
+    description: 'rgb, rgba and # are permitted here.'
+    type: color
+    default: '#b35f00'
+    category: GedankenfolgerFaq.style
+  faq.font.family:
+    label: 'Font family'
+    type: string
+    default: 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+    category: GedankenfolgerFaq.style
