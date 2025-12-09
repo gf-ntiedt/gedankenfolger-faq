@@ -10,10 +10,13 @@ fields:
     type: Textarea
     enableRichtext: true
   - identifier: categories
-    type: Relation
+    type: Tab
+  - identifier: categories
+    type: Category
     allowed: 'sys_category'
     relationship: oneToOne
-    maxitems: 1
+  - identifier: settings
+    type: Tab
   - identifier: colorVariant
     type: Select
     renderType: selectSingle
@@ -24,5 +27,5 @@ fields:
         label: 'Primary'
       - value: secondary
         label: 'Secondary'
-      - value: warning
-        label: 'Warning'
+      - value: tertiary
+        label: 'Tertiary'

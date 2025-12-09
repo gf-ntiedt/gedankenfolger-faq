@@ -6,6 +6,9 @@
       <trans-unit id="title">
         <target>FAQ</target>
       </trans-unit>
+      <trans-unit id="tabs.settings">
+        <target>Einstellungen</target>
+      </trans-unit>
       <trans-unit id="storageFolder.label">
         <target>Speicherordner (Sys-Ordner)</target>
       </trans-unit>

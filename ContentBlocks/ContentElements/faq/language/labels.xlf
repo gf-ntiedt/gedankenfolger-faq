@@ -6,6 +6,9 @@
       <trans-unit id="title">
         <source>FAQ</source>
       </trans-unit>
+      <trans-unit id="tabs.settings">
+        <source>Settings</source>
+      </trans-unit>
       <trans-unit id="storageFolder.label">
         <source>Storage folder (sys_folder)</source>
       </trans-unit>

@@ -4,6 +4,10 @@ group: default
 prefixFields: true
 prefixType: full
 fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: settings
+    type: Tab
   - identifier: storageFolder
     type: Select
     renderType: selectMultipleSideBySide

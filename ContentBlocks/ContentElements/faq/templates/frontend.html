@@ -8,7 +8,7 @@
   <f:if condition="{faqs}">
     <div class="{data.CType}__list" role="list">
       <f:for each="{faqs}" as="faq" iteration="iter">
-        <details id="faq-item{faq.data.uid}" class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{openFirst} && {iter.isFirst}', then: 'open')}>
+        <details id="faq-item{faq.data.uid}" class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{data.gedankenfolger_faq_openFirst} && {iter.isFirst}', then: 'open')}>
           <summary class="{data.CType}__question">
             <span class="{data.CType}__question-text">{faq.data.question}</span>
           </summary>

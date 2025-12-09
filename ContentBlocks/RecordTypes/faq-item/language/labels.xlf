@@ -12,8 +12,14 @@
       <trans-unit id="answer.label">
         <source>Answer</source>
       </trans-unit>
+      <trans-unit id="tabs.categories">
+        <source>Categories</source>
+      </trans-unit>
       <trans-unit id="categories.label">
         <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="tabs.settings">
+        <source>Settings</source>
       </trans-unit>
       <trans-unit id="colorVariant.label">
         <source>Color variant</source>
