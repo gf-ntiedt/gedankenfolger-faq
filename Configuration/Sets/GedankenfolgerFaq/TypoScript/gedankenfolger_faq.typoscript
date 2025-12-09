@@ -1,20 +1,24 @@
-tt_content.gedankenfolger_faq {
-  settings {
-    parameterName = {$faq.parameterName}
-    schemaEnabled = {$faq.schemaEnabled}
-  }
-
-  dataProcessing {
-    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-    10 {
-      table = tx_gedankenfolger_faq_item
-      pidInList.field = storageFolder
-      orderBy = sorting
-      as = faqs
+tt_content{
+  gedankenfolger_faq {
+    file = EXT:gedankenfolger_faq/ContentBlocks/ContentElements/faq/templates/frontend.html
+    settings {
+      parameterName = {$faq.parameterName}
+      schemaEnabled = {$faq.schemaEnabled}
     }
-    100 = site-language
-    100 {
-        as = language
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      10 {
+        table = tx_gedankenfolger_faq_item
+        pidInList.field = gedankenfolger_faq_storageFolder
+        recursive = 0
+        orderBy = sorting
+        as = faqs
+      }
+      100 = site-language
+      100 {
+          as = language
+      }
     }
   }
 }
