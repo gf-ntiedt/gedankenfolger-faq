@@ -21,6 +21,9 @@
         <a href="#usage">Usage</a>
     </li>
     <li>
+        <a href="#options">Options</a>
+    </li>
+    <li>
         <a href="#notes">Notes</a>
     </li>
     <li>
@@ -36,7 +39,7 @@
         FAQ Item record type (question, answer (RTE), categories, color variant)
     </li>
     <li>
-        FAQ content element: select items, optional category filter, open-first option
+        FAQ content element: select items from a storage folder; options for open-first, single-open-only, and grouping by category with optional category headings
     </li>
     <li>
         Accessible accordion markup and deep-linking via configurable URL parameter
@@ -72,12 +75,29 @@
         Create FAQ items under the record type "FAQ Item".
     </li>
     <li>
-        Insert the "FAQ" content element, pick items and options.
+        Insert the "FAQ" content element, point it to a storage folder with your FAQ items via "Storage folder".
     </li>
     <li>
         Configure URL parameter name and schema toggle under site settings (`faq.parameterName`, `faq.schemaEnabled`).
     </li>
 </ol>
+
+<h3 id="options">
+    Options
+</h3>
+<ul>
+  <li><strong>Open first</strong>: opens the first FAQ initially if none is open yet.</li>
+  <li><strong>Open single only</strong>: ensures only one FAQ can be open at a time (per component instance).</li>
+  <li><strong>Group by category</strong>: groups items by their assigned sys_category.</li>
+  <li><strong>Show category titles</strong>: when grouping is enabled, renders category headings above each group.</li>
+</ul>
+
+<h4>Behavior and accessibility</h4>
+<ul>
+  <li>Markup uses native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> for accessible accordion behavior.</li>
+  <li>Deep-linking via hash (<code>#faq-{uid}</code>) opens the targeted item and, when single-open-only is enabled, closes siblings within the same component.</li>
+  <li>JavaScript is lightweight and instance-scoped via data attributes on the wrapper: <code>data-open-first</code>, <code>data-open-single-only</code>, and <code>data-faq-parameter</code>.</li>
+</ul>
 
 <h3 id="notes">
     Notes
