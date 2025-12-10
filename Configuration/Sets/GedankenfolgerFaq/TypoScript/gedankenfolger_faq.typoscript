@@ -15,6 +15,16 @@ tt_content{
         orderBy = sorting
         as = faqs
       }
+      20 = Gedankenfolger\GedankenfolgerFaq\DataProcessing\GroupByCategoryProcessor
+      20 {
+        if.isTrue.field = gedankenfolger_faq_groupByCategory
+        table = tx_gedankenfolger_faq_item
+        pidInList.field = gedankenfolger_faq_storageFolder
+        recursive = 0
+        orderBy = sorting
+        categoryField = categories
+        as = faqsByCategory
+      }
       100 = site-language
       100 {
           as = language
