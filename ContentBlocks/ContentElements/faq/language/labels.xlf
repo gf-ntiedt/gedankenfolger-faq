@@ -15,6 +15,15 @@
       <trans-unit id="openFirst.label">
         <source>Open first item on load</source>
       </trans-unit>
+      <trans-unit id="openSingleOnly.label">
+        <source>Allowing only one open element at a time</source>
+      </trans-unit>
+      <trans-unit id="groupByCategory.label">
+        <source>Group FAQ entries by category</source>
+      </trans-unit>
+      <trans-unit id="showCategoryTitles.label">
+        <source>Show categories titles</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

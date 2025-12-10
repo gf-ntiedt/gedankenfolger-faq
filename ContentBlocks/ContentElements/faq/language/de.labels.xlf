@@ -15,6 +15,15 @@
       <trans-unit id="openFirst.label">
         <target>Ersten Eintrag beim Laden öffnen</target>
       </trans-unit>
+      <trans-unit id="openSingleOnly.label">
+        <target>Nur ein gleichzeitig geöffnetes Element zulassen</target>
+      </trans-unit>
+      <trans-unit id="groupByCategory.label">
+        <target>FAQ-Einträge nach Kategorie gruppieren</target>
+      </trans-unit>
+      <trans-unit id="showCategoryTitles.label">
+        <target>Zeige Kategorie-Titel</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

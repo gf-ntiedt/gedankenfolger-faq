@@ -17,4 +17,10 @@ fields:
     maxitems: 1
   - identifier: openFirst
     type: Checkbox
+  - identifier: openSingleOnly
+    type: Checkbox
+  - identifier: groupByCategory
+    type: Checkbox
+  - identifier: showCategoryTitles
+    type: Checkbox
 
