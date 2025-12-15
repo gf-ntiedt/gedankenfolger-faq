@@ -10,7 +10,16 @@
         <target>Einstellungen</target>
       </trans-unit>
       <trans-unit id="storageFolder.label">
-        <target>Speicherordner (Sys-Ordner)</target>
+        <target>Speicherordner (System-Ordner)</target>
+      </trans-unit>
+      <trans-unit id="recursive.label">
+        <target>Anzahl der rekursiven Ebenen für den Speicherordner (System-Ordner)</target>
+      </trans-unit>
+      <trans-unit id="orderBy.label">
+        <target>Sortieren nach Tabellen-Feld</target>
+      </trans-unit>
+      <trans-unit id="orderBy.description">
+        <target>Wenn leer, nach dem Feld sorting. Beispiele: sorting,uid,title</target>
       </trans-unit>
       <trans-unit id="openFirst.label">
         <target>Ersten Eintrag beim Laden öffnen</target>

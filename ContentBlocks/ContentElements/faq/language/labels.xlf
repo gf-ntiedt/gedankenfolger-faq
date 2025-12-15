@@ -10,7 +10,16 @@
         <source>Settings</source>
       </trans-unit>
       <trans-unit id="storageFolder.label">
-        <source>Storage folder (sys_folder)</source>
+        <source>Storage folder (sysfolder)</source>
+      </trans-unit>
+      <trans-unit id="recursive.label">
+        <source>Number of recursive levels for the storage folder (sysfolder)</source>
+      </trans-unit>
+      <trans-unit id="orderBy.label">
+        <source>Sort by table field</source>
+      </trans-unit>
+      <trans-unit id="orderBy.description">
+        <source>If empty defaults to sorting. Examples: sorting,uid,title</source>
       </trans-unit>
       <trans-unit id="openFirst.label">
         <source>Open first item on load</source>

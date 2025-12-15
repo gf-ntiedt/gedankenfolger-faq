@@ -15,6 +15,17 @@ fields:
     foreign_table_where: 'AND {#pages}.{#doktype}=254 ORDER BY pages.sorting'
     size: 5
     maxitems: 1
+  - identifier: recursive
+    type: Number
+    format: integer
+    default: 0
+    range:
+      lower: 0
+      upper: 10
+  - identifier: orderBy
+    type: Text
+    placeholder: 'sorting'
+    searchable: false
   - identifier: openFirst
     type: Checkbox
   - identifier: openSingleOnly
