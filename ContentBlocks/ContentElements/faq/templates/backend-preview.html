@@ -1,4 +1,105 @@
-<div class="gf-faq-backend">
-  <strong>FAQ</strong>
-  <div>Items and options configurable in element.</div>
-</div>
+<html
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+  <f:layout name="Preview" />
+
+  <f:section name="Header">
+      <f:if condition="{data.header}">
+        {data.header}
+      </f:if>
+  </f:section>
+
+  <f:section name="Content">
+    <div id="c{data.uid}" class="{data.CType}">
+      <ul class="list-group">
+        <f:if condition="{data.storageFolder}">
+          <f:for each="{data.storageFolder}" as="folder">
+            <li class="list-group-item d-flex justify-content-between"><f:translate key="{cb:languagePath()}:storageFolder.label" /> <f:be.link route="web_list" parameters="{id: folder.uid}" title="{folder.title}"><core:icon identifier="apps-filetree-folder-default" size="small" /></f:be.link></li>
+          </f:for>
+        </f:if>
+
+        <f:if condition="{data.recursive}">
+          <li class="list-group-item d-flex justify-content-between">
+            <f:translate key="{cb:languagePath()}:recursive.label" />
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_recursive">
+              <span>{data.recursive}</span>
+            </be:link.editRecord>
+          </li>
+        </f:if>
+
+        <f:if condition="{data.orderBy}">
+          <li class="list-group-item d-flex justify-content-between">
+            <f:translate key="{cb:languagePath()}:orderBy.label" />
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_orderBy">
+              <span>{data.orderBy}</span>
+            </be:link.editRecord>
+          </li>
+        </f:if>
+
+        <li class="list-group-item d-flex justify-content-between">
+          <f:translate key="{cb:languagePath()}:openFirst.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openFirst">
+            <f:if condition="{data.openFirst}">
+              <f:then>
+                <core:icon identifier="actions-check-circle" size="small" />
+              </f:then>
+              <f:else>
+                <core:icon identifier="actions-circle" size="small" />
+              </f:else>
+            </f:if>
+          </be:link.editRecord>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between">
+          <f:translate key="{cb:languagePath()}:openSingleOnly.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openSingleOnly">
+            <f:if condition="{data.openSingleOnly}">
+              <f:then>
+                <core:icon identifier="actions-check-circle" size="small" />
+              </f:then>
+              <f:else>
+                <core:icon identifier="actions-circle" size="small" />
+              </f:else>
+            </f:if>
+          </be:link.editRecord>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between">
+          <f:translate key="{cb:languagePath()}:groupByCategory.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory">
+            <f:if condition="{data.groupByCategory}">
+              <f:then>
+                <core:icon identifier="actions-check-circle" size="small" />
+              </f:then>
+              <f:else>
+                <core:icon identifier="actions-circle" size="small" />
+              </f:else>
+            </f:if>
+          </be:link.editRecord>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between">
+          <f:translate key="{cb:languagePath()}:showCategoryTitles.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_showCategoryTitles">
+            <f:if condition="{data.showCategoryTitles}">
+              <f:then>
+                <core:icon identifier="actions-check-circle" size="small" />
+              </f:then>
+              <f:else>
+                <core:icon identifier="actions-circle" size="small" />
+              </f:else>
+            </f:if>
+          </be:link.editRecord>
+        </li>
+      </ul>
+    </div>
+  </f:section>
+
+  <f:section name="Footer">
+      <div class="d-flex justify-content-between">
+        <be:link.editRecord uid="{data.uid}" table="tt_content">UID: {data.uid}</be:link.editRecord>
+        <be:link.editRecord uid="{data.uid}" table="tt_content">PID: {data.pid}</be:link.editRecord>
+      </div>
+  </f:section>
+</html>
