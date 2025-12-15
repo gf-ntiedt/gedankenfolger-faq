@@ -11,8 +11,9 @@ tt_content{
       10 {
         table = tx_gedankenfolger_faq_item
         pidInList.field = gedankenfolger_faq_storageFolder
-        recursive = 0
-        orderBy = sorting
+        recursive.field = gedankenfolger_faq_recursive
+        orderBy.field = gedankenfolger_faq_orderBy
+        orderBy.ifEmpty = sorting
         as = faqs
       }
       20 = Gedankenfolger\GedankenfolgerFaq\DataProcessing\GroupByCategoryProcessor
@@ -20,8 +21,9 @@ tt_content{
         if.isTrue.field = gedankenfolger_faq_groupByCategory
         table = tx_gedankenfolger_faq_item
         pidInList.field = gedankenfolger_faq_storageFolder
-        recursive = 0
-        orderBy = sorting
+        recursive.field = gedankenfolger_faq_recursive
+        orderBy.field = gedankenfolger_faq_orderBy
+        orderBy.ifEmpty = sorting
         categoryField = categories
         as = faqsByCategory
       }
