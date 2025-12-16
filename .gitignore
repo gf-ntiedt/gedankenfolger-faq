@@ -40,6 +40,10 @@ config/system/additional.php
 *.tmp
 *~
 
+# Datenbank-Dateien
+*.sql
+*.csv
+
 .env
 
 # Andere Repos
