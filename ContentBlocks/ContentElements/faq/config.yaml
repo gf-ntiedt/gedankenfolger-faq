@@ -6,6 +6,8 @@ prefixType: full
 fields:
   - identifier: TYPO3/Header
     type: Basic
+  - identifier: header_link
+    useExistingField: true
   - identifier: settings
     type: Tab
   - identifier: storageFolder

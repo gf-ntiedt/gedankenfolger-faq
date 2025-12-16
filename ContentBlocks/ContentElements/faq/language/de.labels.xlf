@@ -4,7 +4,7 @@
     <header/>
     <body>
       <trans-unit id="title">
-        <target>FAQ</target>
+        <target>Gedankenfolger FAQ</target>
       </trans-unit>
       <trans-unit id="tabs.settings">
         <target>Einstellungen</target>

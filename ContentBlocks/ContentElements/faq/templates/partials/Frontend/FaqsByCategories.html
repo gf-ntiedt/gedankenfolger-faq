@@ -3,6 +3,11 @@
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
 
     <div class="{data.CType}" data-faq-parameter="{settings.parameterName}" data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}" data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}">
+    <f:if condition="{data.header}">
+      <f:link.typolink parameter="{data.header_link}">
+        {data.header}
+      </f:link.typolink>
+    </f:if>
     <div class="{data.CType}__list" role="list">
       <f:variable name="isFirst" value="0" />
       <f:for each="{faqsByCategory}" as="category" iteration="iteratorCat">

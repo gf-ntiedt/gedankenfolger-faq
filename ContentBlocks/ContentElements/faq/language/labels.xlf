@@ -4,7 +4,7 @@
     <header/>
     <body>
       <trans-unit id="title">
-        <source>FAQ</source>
+        <source>Gedankenfolger FAQ</source>
       </trans-unit>
       <trans-unit id="tabs.settings">
         <source>Settings</source>
