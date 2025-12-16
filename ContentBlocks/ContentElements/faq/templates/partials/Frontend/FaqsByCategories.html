@@ -9,7 +9,6 @@
       </f:link.typolink>
     </f:if>
     <div class="{data.CType}__list" role="list">
-      <f:variable name="isFirst" value="0" />
       <f:for each="{faqsByCategory}" as="category" iteration="iteratorCat">
         <f:if condition="{data.gedankenfolger_faq_showCategoryTitles}">
           <h3 class="{data.CType}__list--category {data.CType}__list--category-{iteratorCat.cycle} ">
@@ -17,7 +16,7 @@
           </h3>
         </f:if>
         <f:for each="{category.items}" as="faq" iteration="iterator">
-          <f:variable name="isFirst" value="{f:if(condition:'{data.gedankenfolger_faq_openFirst} && {iterator.isFirst} && !{isFirst}', then:1)}"></f:variable>
+          <f:variable name="isFirst" value="{f:if(condition:'{data.gedankenfolger_faq_openFirst} && {iterator.isFirst} && {iteratorCat.isFirst}', then:1,else:0)}"></f:variable>
           <details id="faq-item{faq.data.uid}"
             class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}"
             {f:if(condition: isFirst , then: 'open' )}>
