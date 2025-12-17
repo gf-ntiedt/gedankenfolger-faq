@@ -28,6 +28,15 @@ fields:
     type: Text
     placeholder: 'sorting'
     searchable: false
+  - identifier: tabFilter
+    type: Tab
+  - identifier: filterByCategory
+    type: Select
+    renderType: selectMultipleSideBySide
+    foreign_table: 'sys_category'
+    foreign_table_where: 'ORDER BY sys_category.sorting'
+    size: 5
+    maxitems: 5
   - identifier: tabSettings
     type: Tab
   - identifier: paletteOpenOnLoad
