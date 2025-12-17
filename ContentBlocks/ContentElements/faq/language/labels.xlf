@@ -6,8 +6,8 @@
       <trans-unit id="title">
         <source>Gedankenfolger FAQ</source>
       </trans-unit>
-      <trans-unit id="tabs.settings">
-        <source>Settings</source>
+      <trans-unit id="tabs.tabRecords">
+        <source>Records</source>
       </trans-unit>
       <trans-unit id="storageFolder.label">
         <source>Storage folder (sysfolder)</source>
@@ -21,8 +21,26 @@
       <trans-unit id="orderBy.description">
         <source>If empty defaults to sorting. Examples: sorting,uid,title</source>
       </trans-unit>
-      <trans-unit id="openFirst.label">
-        <source>Open first item on load</source>
+      <trans-unit id="tabs.tabFilter">
+        <source>Filter</source>
+      </trans-unit>
+      <trans-unit id="tabs.tabSettings">
+        <source>Settings</source>
+      </trans-unit>
+      <trans-unit id="palettes.paletteOpenOnLoad.label">
+        <source>Open on load</source>
+      </trans-unit>
+      <trans-unit id="openItem.label">
+        <source>Open item</source>
+      </trans-unit>
+      <trans-unit id="openItem.items.first.label">
+        <source>First</source>
+      </trans-unit>
+      <trans-unit id="openItem.items.uid.label">
+        <source>UID</source>
+      </trans-unit>
+      <trans-unit id="openByUid.label">
+        <source>Item (UID)</source>
       </trans-unit>
       <trans-unit id="openSingleOnly.label">
         <source>Allowing only one open element at a time</source>

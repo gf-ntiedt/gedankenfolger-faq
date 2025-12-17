@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<xliff version="1.2" xmlns="urnoasis:names:tc:xliff:document:1.2">
   <file datatype="plaintext" original="labels.xlf" source-language="en" target-language="de" product-name="gedankenfolger_faq">
     <header/>
     <body>
       <trans-unit id="title">
         <target>Gedankenfolger FAQ</target>
       </trans-unit>
-      <trans-unit id="tabs.settings">
-        <target>Einstellungen</target>
+      <trans-unit id="tabs.tabRecords">
+        <target>Datensätze</target>
       </trans-unit>
       <trans-unit id="storageFolder.label">
         <target>Speicherordner (System-Ordner)</target>
@@ -21,8 +21,26 @@
       <trans-unit id="orderBy.description">
         <target>Wenn leer, nach dem Feld sorting. Beispiele: sorting,uid,title</target>
       </trans-unit>
-      <trans-unit id="openFirst.label">
-        <target>Ersten Eintrag beim Laden öffnen</target>
+      <trans-unit id="tabs.tabFilter">
+        <target>Filter</target>
+      </trans-unit>
+      <trans-unit id="tabs.tabSettings">
+        <target>Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="palettes.paletteOpenOnLoad.label">
+        <target>Beim Laden öffnen</target>
+      </trans-unit>
+      <trans-unit id="openItem.label">
+        <target>Eintrag beim Laden öffnen</target>
+      </trans-unit>
+      <trans-unit id="openItem.items.first.label">
+        <target>First</target>
+      </trans-unit>
+      <trans-unit id="openItem.items.uid.label">
+        <target>UID</target>
+      </trans-unit>
+      <trans-unit id="openByUid.label">
+        <target>Element (UID)</target>
       </trans-unit>
       <trans-unit id="openSingleOnly.label">
         <target>Nur ein gleichzeitig geöffnetes Element zulassen</target>

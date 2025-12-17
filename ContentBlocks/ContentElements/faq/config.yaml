@@ -8,7 +8,7 @@ fields:
     type: Basic
   - identifier: header_link
     useExistingField: true
-  - identifier: settings
+  - identifier: tabRecords
     type: Tab
   - identifier: storageFolder
     type: Select
@@ -28,12 +28,35 @@ fields:
     type: Text
     placeholder: 'sorting'
     searchable: false
-  - identifier: openFirst
-    type: Checkbox
+  - identifier: tabSettings
+    type: Tab
+  - identifier: paletteOpenOnLoad
+    type: Palette
+    fields:
+      - identifier: openItem
+        type: Select
+        renderType: selectSingle
+        items:
+          - label: '-'
+            value: ''
+          - value: first
+          - value: uid
+        onChange: reload
+      - type: Linebreak
+      - identifier: openByUid
+        type: Select
+        renderType: selectMultipleSideBySide
+        foreign_table: 'tx_gedankenfolger_faq_item'
+        foreign_table_where: 'ORDER BY pages.sorting'
+        size: 1
+        maxitems: 1
+        displayCond: 'FIELD:openItem:=:uid'
   - identifier: openSingleOnly
     type: Checkbox
   - identifier: groupByCategory
     type: Checkbox
+    onChange: reload
   - identifier: showCategoryTitles
     type: Checkbox
+    displayCond: 'FIELD:groupByCategory:=:1'
 
