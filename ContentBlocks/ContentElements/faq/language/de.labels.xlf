@@ -24,6 +24,9 @@
       <trans-unit id="tabs.tabFilter">
         <target>Filter</target>
       </trans-unit>
+      <trans-unit id="filterByCategory.label">
+        <target>Nach Kategorie</target>
+      </trans-unit>
       <trans-unit id="tabs.tabSettings">
         <target>Einstellungen</target>
       </trans-unit>

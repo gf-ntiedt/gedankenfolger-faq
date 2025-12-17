@@ -24,6 +24,9 @@
       <trans-unit id="tabs.tabFilter">
         <source>Filter</source>
       </trans-unit>
+      <trans-unit id="filterByCategory.label">
+        <source>By category</source>
+      </trans-unit>
       <trans-unit id="tabs.tabSettings">
         <source>Settings</source>
       </trans-unit>
