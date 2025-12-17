@@ -14,9 +14,14 @@
     <div id="c{data.uid}" class="{data.CType}">
       <ul class="list-group">
         <f:if condition="{data.storageFolder}">
-          <f:for each="{data.storageFolder}" as="folder">
-            <li class="list-group-item d-flex justify-content-between"><f:translate key="{cb:languagePath()}:storageFolder.label" /> <f:be.link route="web_list" parameters="{id: folder.uid}" title="{folder.title}"><core:icon identifier="apps-filetree-folder-default" size="small" /></f:be.link></li>
-          </f:for>
+            <li class="list-group-item d-flex justify-content-between">
+              <f:translate key="{cb:languagePath()}:storageFolder.label" />
+              <f:for each="{data.storageFolder}" as="folder">
+                <f:be.link route="web_list" parameters="{id: folder.uid}" title="{folder.title}">
+                  <core:icon identifier="apps-filetree-folder-default" size="small" />
+                </f:be.link>
+              </f:for>
+            </li>
         </f:if>
 
         <f:if condition="{data.recursive}">
@@ -37,19 +42,36 @@
           </li>
         </f:if>
 
-        <li class="list-group-item d-flex justify-content-between">
-          <f:translate key="{cb:languagePath()}:openFirst.label" />
-          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openFirst">
-            <f:if condition="{data.openFirst}">
+        <f:if condition="{data.openItem}">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem">
+              <f:translate key="{cb:languagePath()}:openItem.label" />
+            </be:link.editRecord>
+            
+            <f:if condition="{data.openItem}=='first'">
               <f:then>
-                <core:icon identifier="actions-check-circle" size="small" />
+                <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem">
+                  <f:translate key="{cb:languagePath()}:openItem.items.{data.openItem}.label" />
+                </be:link.editRecord>
               </f:then>
               <f:else>
-                <core:icon identifier="actions-circle" size="small" />
+                <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openByUid">
+                  <f:translate key="{cb:languagePath()}:openItem.items.{data.openItem}.label" />
+                </be:link.editRecord>
               </f:else>
             </f:if>
-          </be:link.editRecord>
-        </li>
+            
+            <f:if condition="{data.openItem}=='uid' && {data.openByUid}">
+              <ul class="list-group">
+                <f:for each="{data.openByUid}" as="faq">
+                  <be:link.editRecord uid="{faq.uid}" table="tx_gedankenfolger_faq_item">
+                    {faq.question}
+                  </be:link.editRecord>
+                </f:for>
+              </ul>
+            </f:if>
+          </li>
+        </f:if>
 
         <li class="list-group-item d-flex justify-content-between">
           <f:translate key="{cb:languagePath()}:openSingleOnly.label" />
