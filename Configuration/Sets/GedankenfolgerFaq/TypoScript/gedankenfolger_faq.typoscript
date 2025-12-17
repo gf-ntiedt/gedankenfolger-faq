@@ -7,25 +7,22 @@ tt_content{
     }
 
     dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      10 = Gedankenfolger\GedankenfolgerFaq\DataProcessing\FaqProcessor
       10 {
         table = tx_gedankenfolger_faq_item
         pidInList.field = gedankenfolger_faq_storageFolder
         recursive.field = gedankenfolger_faq_recursive
         orderBy.field = gedankenfolger_faq_orderBy
         orderBy.ifEmpty = sorting
-        as = faqs
-      }
-      20 = Gedankenfolger\GedankenfolgerFaq\DataProcessing\GroupByCategoryProcessor
-      20 {
-        if.isTrue.field = gedankenfolger_faq_groupByCategory
-        table = tx_gedankenfolger_faq_item
-        pidInList.field = gedankenfolger_faq_storageFolder
-        recursive.field = gedankenfolger_faq_recursive
-        orderBy.field = gedankenfolger_faq_orderBy
-        orderBy.ifEmpty = sorting
+
         categoryField = categories
-        as = faqsByCategory
+        filterField = gedankenfolger_faq_filterByCategory
+
+        categoryOrderBy.field = gedankenfolger_faq_categoryOrderBy
+        categoryOrderBy.ifEmpty = sorting
+
+        asFlat = faqs
+        asGrouped = faqsByCategory
       }
       100 = site-language
       100 {
