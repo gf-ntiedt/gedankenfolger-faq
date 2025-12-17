@@ -14,7 +14,7 @@ fields:
   - identifier: categories
     type: Category
     allowed: 'sys_category'
-    relationship: oneToOne
+    relationship: manyToMany
   - identifier: settings
     type: Tab
   - identifier: colorVariant
