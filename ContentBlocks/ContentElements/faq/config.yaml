@@ -26,6 +26,8 @@ fields:
       upper: 10
   - identifier: orderBy
     type: Text
+  - identifier: categoryOrderBy
+    type: Text
     placeholder: 'sorting'
     searchable: false
   - identifier: tabFilter

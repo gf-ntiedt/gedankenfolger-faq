@@ -21,6 +21,12 @@
       <trans-unit id="orderBy.description">
         <source>If empty defaults to sorting. Examples: sorting,uid,title</source>
       </trans-unit>
+      <trans-unit id="categoryOrderBy.label">
+        <source>Sort categories by table field</source>
+      </trans-unit>
+      <trans-unit id="categoryOrderBy.description">
+        <source>If empty defaults to sorting. Examples: sorting,uid,title</source>
+      </trans-unit>
       <trans-unit id="tabs.tabFilter">
         <source>Filter</source>
       </trans-unit>

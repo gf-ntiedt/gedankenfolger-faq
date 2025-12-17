@@ -15,18 +15,24 @@
       <ul class="list-group">
         <f:if condition="{data.storageFolder}">
             <li class="list-group-item d-flex justify-content-between">
-              <f:translate key="{cb:languagePath()}:storageFolder.label" />
-              <f:for each="{data.storageFolder}" as="folder">
-                <f:be.link route="web_list" parameters="{id: folder.uid}" title="{folder.title}">
-                  <core:icon identifier="apps-filetree-folder-default" size="small" />
-                </f:be.link>
-              </f:for>
+              <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_storageFolder">
+                <f:translate key="{cb:languagePath()}:storageFolder.label" />
+              </be:link.editRecord>
+              <div class="list-group">
+                <f:for each="{data.storageFolder}" as="folder">
+                  <f:be.link route="web_list" parameters="{id: folder.uid}" title="{folder.title}" class="list-group-item list-group-item-action">
+                    {folder.title}
+                  </f:be.link>
+                </f:for>
+              </div>
             </li>
         </f:if>
 
         <f:if condition="{data.recursive}">
           <li class="list-group-item d-flex justify-content-between">
-            <f:translate key="{cb:languagePath()}:recursive.label" />
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_recursive">
+              <f:translate key="{cb:languagePath()}:recursive.label" />
+            </be:link.editRecord>
             <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_recursive">
               <span>{data.recursive}</span>
             </be:link.editRecord>
@@ -35,10 +41,38 @@
 
         <f:if condition="{data.orderBy}">
           <li class="list-group-item d-flex justify-content-between">
-            <f:translate key="{cb:languagePath()}:orderBy.label" />
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_orderBy">
+              <f:translate key="{cb:languagePath()}:orderBy.label" />
+            </be:link.editRecord>
             <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_orderBy">
               <span>{data.orderBy}</span>
             </be:link.editRecord>
+          </li>
+        </f:if>
+
+        <f:if condition="{data.categoryOrderBy}">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderBy">
+              <f:translate key="{cb:languagePath()}:categoryOrderBy.label" />
+            </be:link.editRecord>
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderBy">
+              <span>{data.categoryOrderBy}</span>
+            </be:link.editRecord>
+          </li>
+        </f:if>
+
+        <f:if condition="{data.filterByCategory}">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_filterByCategory">
+            <f:translate key="{cb:languagePath()}:tabs.tabFilter" />: <f:translate key="{cb:languagePath()}:filterByCategory.label" />
+            </be:link.editRecord>
+            <div class="list-group">
+              <f:for each="{data.filterByCategory}" as="category">
+                <be:link.editRecord uid="{category.uid}" table="sys_category" class="list-group-item list-group-item-action">
+                  {category.title}
+                </be:link.editRecord>
+              </f:for>
+            </div>
           </li>
         </f:if>
 
@@ -62,19 +96,21 @@
             </f:if>
             
             <f:if condition="{data.openItem}=='uid' && {data.openByUid}">
-              <ul class="list-group">
+              <div class="list-group">
                 <f:for each="{data.openByUid}" as="faq">
-                  <be:link.editRecord uid="{faq.uid}" table="tx_gedankenfolger_faq_item">
+                  <be:link.editRecord uid="{faq.uid}" table="tx_gedankenfolger_faq_item" class="list-group-item list-group-item-action">
                     {faq.question}
                   </be:link.editRecord>
                 </f:for>
-              </ul>
+              </div>
             </f:if>
           </li>
         </f:if>
 
         <li class="list-group-item d-flex justify-content-between">
-          <f:translate key="{cb:languagePath()}:openSingleOnly.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openSingleOnly">
+            <f:translate key="{cb:languagePath()}:openSingleOnly.label" />
+          </be:link.editRecord>
           <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openSingleOnly">
             <f:if condition="{data.openSingleOnly}">
               <f:then>
@@ -88,7 +124,9 @@
         </li>
 
         <li class="list-group-item d-flex justify-content-between">
-          <f:translate key="{cb:languagePath()}:groupByCategory.label" />
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory">
+            <f:translate key="{cb:languagePath()}:groupByCategory.label" />
+          </be:link.editRecord>
           <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory">
             <f:if condition="{data.groupByCategory}">
               <f:then>
@@ -101,19 +139,23 @@
           </be:link.editRecord>
         </li>
 
-        <li class="list-group-item d-flex justify-content-between">
-          <f:translate key="{cb:languagePath()}:showCategoryTitles.label" />
-          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_showCategoryTitles">
-            <f:if condition="{data.showCategoryTitles}">
-              <f:then>
-                <core:icon identifier="actions-check-circle" size="small" />
-              </f:then>
-              <f:else>
-                <core:icon identifier="actions-circle" size="small" />
-              </f:else>
-            </f:if>
-          </be:link.editRecord>
-        </li>
+        <f:if condition="{data.groupByCategory}">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_showCategoryTitles">
+              <f:translate key="{cb:languagePath()}:showCategoryTitles.label" />
+            </be:link.editRecord>
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_showCategoryTitles">
+              <f:if condition="{data.showCategoryTitles}">
+                <f:then>
+                  <core:icon identifier="actions-check-circle" size="small" />
+                </f:then>
+                <f:else>
+                  <core:icon identifier="actions-circle" size="small" />
+                </f:else>
+              </f:if>
+            </be:link.editRecord>
+          </li>
+        </f:if>
       </ul>
     </div>
   </f:section>

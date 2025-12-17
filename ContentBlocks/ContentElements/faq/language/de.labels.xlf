@@ -21,6 +21,12 @@
       <trans-unit id="orderBy.description">
         <target>Wenn leer, nach dem Feld sorting. Beispiele: sorting,uid,title</target>
       </trans-unit>
+      <trans-unit id="categoryOrderBy.label">
+        <target>Kategorien sortieren nach Tabellen-Feld</target>
+      </trans-unit>
+      <trans-unit id="categoryOrderBy.description">
+        <target>Wenn leer, nach dem Feld sorting. Beispiele: sorting,uid,title</target>
+      </trans-unit>
       <trans-unit id="tabs.tabFilter">
         <target>Filter</target>
       </trans-unit>
