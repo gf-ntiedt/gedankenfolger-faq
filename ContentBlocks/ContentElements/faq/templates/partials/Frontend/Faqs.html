@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
   xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
-
+  
   <div class="{data.CType}" data-faq-parameter="{settings.parameterName}" data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}" data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}">
     <f:if condition="{data.header}">
       <f:link.typolink parameter="{data.header_link}">
@@ -10,17 +10,21 @@
     </f:if>
     <div class="{data.CType}__list" role="list">
       <f:for each="{faqs}" as="faq" iteration="iterator">
-        <details id="faq-item{faq.data.uid}" class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
-          <summary class="{data.CType}__question">
-            <span class="{data.CType}__question-text">{faq.data.question}</span>
-          </summary>
-          <div class="{data.CType}__answer">
-            <div class="{data.CType}__answer-inner">
-              {faq.data.answer -> f:format.raw()}
-            </div>
-          </div>
-        </details>
+        <f:render section="Item" arguments="{_all}" />
       </f:for>
     </div>
   </div>
+
+  <f:section name="Item">
+    <details id="faq-item{faq.data.uid}" class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
+      <summary class="{data.CType}__question">
+        <span class="{data.CType}__question-text">{faq.data.question}</span>
+      </summary>
+      <div class="{data.CType}__answer">
+        <div class="{data.CType}__answer-inner">
+          {faq.data.answer -> f:format.raw()}
+        </div>
+      </div>
+    </details>
+  </f:section>
 </html>
