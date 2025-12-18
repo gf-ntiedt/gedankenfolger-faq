@@ -1,5 +1,5 @@
 plugin.tx_wsscss.variables {
-  gf_faq_rootname = gedankenfolger_faq
+  gf_faq_rootname = {$faq.rootName}
 
   gf_faq_color_default = {$faq.color.default}
   gf_faq_bgcolor_default = {$faq.bgcolor.default}
