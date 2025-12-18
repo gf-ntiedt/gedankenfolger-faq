@@ -5,9 +5,11 @@
   <f:layout name="Preview" />
 
   <f:section name="Header">
-      <f:if condition="{data.header}">
+    <f:if condition="{data.header}">
+      <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header">
         {data.header}
-      </f:if>
+      </be:link.editRecord>
+    </f:if>
   </f:section>
 
   <f:section name="Content">
@@ -78,13 +80,13 @@
 
         <f:if condition="{data.openItem}">
           <li class="list-group-item d-flex justify-content-between">
-            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem,gedankenfolger_faq_openByUid">
               <f:translate key="{cb:languagePath()}:openItem.label" />
             </be:link.editRecord>
             
             <f:if condition="{data.openItem}=='first'">
               <f:then>
-                <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem">
+                <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem,gedankenfolger_faq_openByUid">
                   <f:translate key="{cb:languagePath()}:openItem.items.{data.openItem}.label" />
                 </be:link.editRecord>
               </f:then>
@@ -124,10 +126,10 @@
         </li>
 
         <li class="list-group-item d-flex justify-content-between">
-          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory">
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory,gedankenfolger_faq_showCategoryTitles">
             <f:translate key="{cb:languagePath()}:groupByCategory.label" />
           </be:link.editRecord>
-          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory">
+          <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_groupByCategory,gedankenfolger_faq_showCategoryTitles">
             <f:if condition="{data.groupByCategory}">
               <f:then>
                 <core:icon identifier="actions-check-circle" size="small" />
