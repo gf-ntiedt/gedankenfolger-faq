@@ -9,20 +9,28 @@
     const match = hash.match(/^#faq-(\d+)$/);
     if (!match) return;
 
-    const faqId = match[1];
-    const details = document.getElementById(`faq-item${faqId}`);
-    if (!details) return;
+    const rootName = TYPO3.settings.TS.gf_faq_rootname;
+    if (!rootName) return;
 
-    const root = details.closest('[data-faq-parameter]');
-    if (root && root.getAttribute('data-open-single-only') === '1') {
-      root.querySelectorAll('details').forEach(el => {
-        if (el !== details && el.open) el.open = false;
-      });
+    const faqId = match[1];
+    const item = document.getElementById(`faq-item${faqId}`);
+    if (!item) return;
+
+    const root = item.closest('.' + rootName);
+    const layout = root.getAttribute('data-layout') ? root.getAttribute('data-layout') : 0;
+
+    if (layout === '0') {
+      if (root && root.getAttribute('data-open-single-only') === '1') {
+        root.querySelectorAll(rootName + '__accordionitem').forEach(el => {
+          if (el !== item && el.open) el.open = false;
+        });
+      }
+
+      item.open = true;
     }
 
-    details.open = true;
     try {
-      details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      item.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
       // scrollIntoView not critical
     }
@@ -34,7 +42,9 @@
    * - Optionally open the first item when data-open-first="1" and none is open
    */
   const initFaqComponents = () => {
-    document.querySelectorAll('[data-faq-parameter]').forEach((root) => {
+    const rootName = TYPO3.settings.TS.gf_faq_rootname;
+    if (!rootName) return;
+    document.querySelectorAll('.' + rootName + '.layout-0').forEach((root) => {
       const openSingleOnly = root.getAttribute('data-open-single-only') === '1';
       const openFirst = root.getAttribute('data-open-first') === '1';
       const items = Array.from(root.querySelectorAll('details'));
@@ -59,8 +69,10 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    initFaqComponents();
-    handleFaqHash();
+    if (TYPO3.settings && TYPO3.settings.TS.gf_faq_rootname) {
+      initFaqComponents();
+      handleFaqHash();
+    }
   });
 
   window.addEventListener('hashchange', handleFaqHash);

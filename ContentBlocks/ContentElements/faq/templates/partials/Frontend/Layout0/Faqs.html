@@ -2,7 +2,7 @@
   xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
   
-  <div class="{data.CType}" data-faq-parameter="{settings.parameterName}" data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}" data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}">
+  <div id="c{data.uid}" class="{data.CType} layout-{data.layout}" data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}" data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}" data-layout="{data.layout}">
     <f:if condition="{data.header}">
       <f:link.typolink parameter="{data.header_link}">
         {data.header}
@@ -16,7 +16,7 @@
   </div>
 
   <f:section name="Item">
-    <details id="faq-item{faq.data.uid}" class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
+    <details id="faq-item{faq.data.uid}" class="{data.CType}__accordionitem {data.CType}__accordionitem--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}' , then: 'open' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
       <summary class="{data.CType}__question">
         <span class="{data.CType}__question-text">{faq.data.question}</span>
       </summary>

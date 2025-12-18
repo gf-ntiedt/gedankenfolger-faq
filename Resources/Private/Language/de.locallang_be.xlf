@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2025-12-18UTC14:46:300">
+        <header>
+            <authorName>Niels Tiedt</authorName>
+            <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="gedankenfolger_faq.layout.100">
+                <target>Akkordeon (Bootstrap)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

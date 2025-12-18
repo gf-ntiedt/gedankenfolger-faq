@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+  xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
+  schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
+  
+  <div id="c{data.uid}" class="{data.CType} layout-{data.layout} accordion" data-layout="{data.layout}">
+    <f:for each="{faqs}" as="faq" iteration="iterator">
+      <f:render section="Item" arguments="{_all}" />
+    </f:for>
+  </div>
+
+  <f:section name="Item">
+    <div id="faq-item{faq.data.uid}" class="accordion-item {data.CType}__accordionitem {data.CType}__accordionitem--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c{data.uid}-faq-item{faq.data.uid}-collapse" aria-expanded="{f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'true',else: 'false' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'true',else: 'false' )}" aria-controls="c{data.uid}-faq-item{faq.data.uid}-collapse">
+          {faq.data.question}
+        </button>
+      </h2>
+      <div id="c{data.uid}-faq-item{faq.data.uid}-collapse" class="accordion-collapse collapse {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'show' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'show' )}" data-bs-parent="#c{data.uid}">
+        <div class="accordion-body">
+          {faq.data.answer -> f:format.raw()}
+        </div>
+      </div>
+    </div>
+  </f:section>
+</html>

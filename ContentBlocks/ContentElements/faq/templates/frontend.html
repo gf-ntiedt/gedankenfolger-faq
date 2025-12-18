@@ -5,23 +5,18 @@
   <f:if condition="!{data.gedankenfolger_faq_groupByCategory}">
     <f:then>
         <f:if condition="{faqs}">
-          <f:render partial="Frontend/Faqs" arguments="{_all}" />
-          
-          <f:if condition="{settings.schemaEnabled}">
-            <f:render partial="Frontend/Schema" arguments="{language:language,faqs:faqs}" />
-          </f:if>
+          <f:render partial="Frontend/Layout{data.layout}/Faqs" arguments="{_all}" />
         </f:if>
     </f:then>
     <f:else>
         <f:if condition="{faqsByCategory}">
-          <f:render partial="Frontend/FaqsByCategories" arguments="{_all}" />
-        </f:if>
-        <f:if condition="{faqs}">
-          <f:if condition="{settings.schemaEnabled}">
-            <f:render partial="Frontend/Schema" arguments="{language:language,faqs:faqs}" />
-          </f:if>
+          <f:render partial="Frontend/Layout{data.layout}/FaqsByCategories" arguments="{_all}" />
         </f:if>
     </f:else>
   </f:if>
-  
+  <f:if condition="{faqs}">
+    <f:if condition="{settings.schemaEnabled}">
+      <f:render partial="Frontend/Schema" arguments="{language:language,faqs:faqs}" />
+    </f:if>
+  </f:if>
 </html>
