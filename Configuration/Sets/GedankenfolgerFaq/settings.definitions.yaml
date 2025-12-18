@@ -9,6 +9,12 @@ categories:
     parent: GedankenfolgerFaq
 
 settings:
+  faq.rootName:
+    label: 'Root name for relations'
+    type: string
+    default: 'gedankenfolger_faq'
+    readonly: true
+    category: GedankenfolgerFaq.settings
   faq.parameterName:
     label: 'URL parameter for deep-linking'
     type: string
