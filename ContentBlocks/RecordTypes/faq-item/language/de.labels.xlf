@@ -24,7 +24,7 @@
       <trans-unit id="colorVariant.label">
         <target>Farbvariante</target>
       </trans-unit>
-      <trans-unit id="colorVariant.items.standard.label">
+      <trans-unit id="colorVariant.items.default.label">
         <target>Standard</target>
       </trans-unit>
       <trans-unit id="colorVariant.items.primary.label">

@@ -20,12 +20,9 @@ fields:
   - identifier: colorVariant
     type: Select
     renderType: selectSingle
+    default: 'default'
     items:
-      - value: standard
-        label: 'Standard'
+      - value: default
       - value: primary
-        label: 'Primary'
       - value: secondary
-        label: 'Secondary'
       - value: tertiary
-        label: 'Tertiary'

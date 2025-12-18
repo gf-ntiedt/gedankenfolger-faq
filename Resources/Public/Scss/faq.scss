@@ -1,6 +1,6 @@
 .#{$gf_faq_rootname} {
-  --gf-faq-color-standard: #{$gf_faq_color_standard};
-  --gf-faq-bgcolor-standard: #{$gf_faq_bgcolor_standard};
+  --gf-faq-color-default: #{$gf_faq_color_default};
+  --gf-faq-bgcolor-default: #{$gf_faq_bgcolor_default};
   --gf-faq-color-primary: #{$gf_faq_color_primary};
   --gf-faq-bgcolor-primary: #{$gf_faq_bgcolor_primary};
   --gf-faq-color-secondary: #{$gf_faq_color_secondary};
@@ -64,10 +64,10 @@
       }
 
       
-      &.#{$gf_faq_rootname}__item--standard{
+      &.#{$gf_faq_rootname}__item--default{
         .#{$gf_faq_rootname}__question{
-          color: var(--gf-faq-color-standard);
-          background-color: var(--gf-faq-bgcolor-standard);
+          color: var(--gf-faq-color-default);
+          background-color: var(--gf-faq-bgcolor-default);
         }
       }
       &.#{$gf_faq_rootname}__item--primary{

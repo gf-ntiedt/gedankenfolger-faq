@@ -20,14 +20,14 @@ settings:
     default: true
     category: GedankenfolgerFaq.settings
 
-  faq.color.standard:
-    label: 'Standard color'
+  faq.color.default:
+    label: 'default color'
     description: 'rgb, rgba and # are permitted here.'
     type: color
     default: '#ffffff'
     category: GedankenfolgerFaq.style
-  faq.bgcolor.standard:
-    label: 'Standard background color'
+  faq.bgcolor.default:
+    label: 'default background color'
     description: 'rgb, rgba and # are permitted here.'
     type: color
     default: '#2f3b4a'

@@ -23,7 +23,7 @@
     </f:if>
     <f:for each="{categorygroup.items}" as="faq" iteration="iterator">
       <details id="faq-item{faq.data.uid}"
-        class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'standard')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} && {iteratorCat.isFirst}' , then: 'open' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
+        class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} && {iteratorCat.isFirst}' , then: 'open' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
         <summary class="{data.CType}__question">
           <span class="{data.CType}__question-text">{faq.data.question}</span>
         </summary>
