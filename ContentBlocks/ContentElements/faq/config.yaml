@@ -3,6 +3,8 @@ typeName: gedankenfolger_faq
 group: default
 prefixFields: true
 prefixType: full
+basics:
+    - TYPO3/Appearance
 fields:
   - identifier: TYPO3/Header
     type: Basic
