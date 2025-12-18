@@ -1,0 +1,21 @@
+TCEFORM {
+    tt_content {
+        layout{
+            types{
+                gedankenfolger_faq{
+                    removeItems = 1,2,3
+                    altLabels{
+                        #0 = LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_be.xlf:gedankenfolger_faq.layout.0
+                    }
+                    addItems {
+                        100 = LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_be.xlf:gedankenfolger_faq.layout.100
+                        // 110 = LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_be.xlf:gedankenfolger_faq.layout.110
+                        // 120 = LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_be.xlf:gedankenfolger_faq.layout.120
+                        // 130 = LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_be.xlf:gedankenfolger_faq.layout.130
+                    }
+
+                }
+            }
+        }
+    }
+}
