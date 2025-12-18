@@ -20,6 +20,17 @@ settings:
     default: true
     category: GedankenfolgerFaq.settings
 
+  faq.css.default:
+    label: 'Load default CSS'
+    type: bool
+    default: true
+    category: GedankenfolgerFaq.style
+  faq.scss.default:
+    label: 'Load default SCSS and generate CSS'
+    description: 'Override default css loading. Extension ws_scss is required.'
+    type: bool
+    default: true
+    category: GedankenfolgerFaq.style
   faq.color.default:
     label: 'default color'
     description: 'rgb, rgba and # are permitted here.'

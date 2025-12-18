@@ -3,9 +3,17 @@ page {
     gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/JavaScript/faq.js
     gedankenfolger_faq.forceOnTop = 1
   }
-
-  includeCSS {
-    gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Scss/faq.scss
-    gedankenfolger_faq.outputfile = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
-  }
 }
+
+[{$faq.css.default}==1] && [{$faq.scss.default}==0]
+page.includeCSS {
+  gedankenfolger_faq_default = EXT:gedankenfolger_faq/Resources/Public/Css/faq-default.css
+}
+[global]
+
+[{$faq.scss.default}==1]
+page.includeCSS {
+  gedankenfolger_faq_default = EXT:gedankenfolger_faq/Resources/Public/Scss/faq-default.scss
+  gedankenfolger_faq_default.outputfile = EXT:gedankenfolger_faq/Resources/Public/Css/faq-default.css
+}
+[global]
