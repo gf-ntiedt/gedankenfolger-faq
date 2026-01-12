@@ -2,10 +2,17 @@
   xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
   
-  <div id="c{data.uid}" class="{data.CType} layout-{data.layout} accordion" data-layout="{data.layout}">
-    <f:for each="{faqs}" as="faq" iteration="iterator">
-      <f:render section="Item" arguments="{_all}" />
-    </f:for>
+  <div id="c{data.uid}">
+    <f:if condition="{data.header}">
+      <f:link.typolink parameter="{data.header_link}">
+        {data.header}
+      </f:link.typolink>
+    </f:if>
+    <div class="{data.CType} layout-{data.layout} accordion" data-layout="{data.layout}">
+      <f:for each="{faqs}" as="faq" iteration="iterator">
+        <f:render section="Item" arguments="{_all}" />
+      </f:for>
+    </div>
   </div>
 
   <f:section name="Item">

@@ -2,16 +2,21 @@
   xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
   
-  <div id="c{data.uid}" class="{data.CType} layout-{data.layout}" data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}" data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}" data-layout="{data.layout}">
-    <f:if condition="{data.header}">
-      <f:link.typolink parameter="{data.header_link}">
-        {data.header}
-      </f:link.typolink>
-    </f:if>
-    <div class="{data.CType}__list" role="list">
-      <f:for each="{faqs}" as="faq" iteration="iterator">
-        <f:render section="Item" arguments="{_all}" />
-      </f:for>
+  <div id="c{data.uid}">
+    <div class="{data.CType} layout-{data.layout}"
+      data-open-single-only="{f:if(condition: data.gedankenfolger_faq_openSingleOnly, then: '1', else: '0')}"
+      data-open-first="{f:if(condition: data.gedankenfolger_faq_openFirst, then: '1', else: '0')}"
+      data-layout="{data.layout}">
+      <f:if condition="{data.header}">
+        <f:link.typolink parameter="{data.header_link}">
+          {data.header}
+        </f:link.typolink>
+      </f:if>
+      <div class="{data.CType}__list" role="list">
+        <f:for each="{faqs}" as="faq" iteration="iterator">
+          <f:render section="Item" arguments="{_all}" />
+        </f:for>
+      </div>
     </div>
   </div>
 

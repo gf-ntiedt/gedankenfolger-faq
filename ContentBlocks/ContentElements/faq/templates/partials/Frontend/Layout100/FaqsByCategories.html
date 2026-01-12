@@ -2,13 +2,13 @@
   xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
   schema:schemaLocation="https://brot.krue.ml/schemas/schema-1.9.0.xsd" data-namespace-typo3-fluid="true">
 
-    <div class="{data.CType}">
+  <div id="c{data.uid}">
     <f:if condition="{data.header}">
       <f:link.typolink parameter="{data.header_link}">
         {data.header}
       </f:link.typolink>
     </f:if>
-    <div class="{data.CType}__list" role="list">
+    <div>
       <f:for each="{faqsByCategory}" as="categorygroup" iteration="iteratorCat">
         <f:render section="Items" arguments="{_all}" />
       </f:for>
@@ -17,22 +17,26 @@
 
   <f:section name="Items">
     <f:if condition="{data.gedankenfolger_faq_showCategoryTitles}">
-      <h3 class="{data.CType}__list--category {data.CType}__list--category-{iteratorCat.cycle} ">
+      <h3>
         {categorygroup.category.data.title}
       </h3>
     </f:if>
-    <f:for each="{categorygroup.items}" as="faq" iteration="iterator">
-      <details id="faq-item{faq.data.uid}"
-        class="{data.CType}__item {data.CType}__item--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}" {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst} && {iteratorCat.isFirst}' , then: 'open' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}' , then: 'open' )}>
-        <summary class="{data.CType}__question">
-          <span class="{data.CType}__question-text">{faq.data.question}</span>
-        </summary>
-        <div class="{data.CType}__answer">
-          <div class="{data.CType}__answer-inner">
-            {faq.data.answer -> f:format.raw()}
+    <div class="{data.CType} layout-{data.layout} accordion" data-layout="{data.layout}">
+      <f:for each="{categorygroup.items}" as="faq" iteration="iterator">
+        <div id="faq-item{faq.data.uid}"
+          class="accordion-item {data.CType}__accordionitem {data.CType}__accordionitem--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c{data.uid}-faq-item{faq.data.uid}-collapse" aria-expanded="{f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'true',else: 'false' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'true',else: 'false' )}" aria-controls="c{data.uid}-faq-item{faq.data.uid}-collapse">
+              {faq.data.question}
+            </button>
+          </h2>
+          <div id="c{data.uid}-faq-item{faq.data.uid}-collapse" class="accordion-collapse collapse {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'show' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'show' )}" data-bs-parent="#c{data.uid}">
+            <div class="accordion-body">
+              {faq.data.answer -> f:format.raw()}
+            </div>
           </div>
         </div>
-      </details>
-    </f:for>
+      </f:for>
+    </div>
   </f:section>
 </html>
