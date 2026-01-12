@@ -1,7 +1,7 @@
 {
     "name": "gedankenfolger/gedankenfolger-faq",
     "description": "TYPO3 13 FAQ extension with Content Blocks, Site Set, Schema, JS, SCSS.",
-    "version": "13.6.1",
+    "version": "13.6.2",
     "type": "typo3-cms-extension",
     "license": [
         "GPL-2.0-or-later"
