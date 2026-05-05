@@ -161,7 +161,7 @@ Templates and partials can be overridden from your site package without modifyin
 Only the files you actually want to change need to be created — all others fall back to the extension defaults.
 
 **Available templates:**
-- `Frontend.html` – main content element template
+- `frontend.html` – main content element template
 
 **Available partials:**
 - `Frontend/Layout0/Faqs.html`
