@@ -2,13 +2,13 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Gedankenfolger FAQ',
-    'description' => 'FAQ extension using Content Blocks, Site Set, Schema, JS and SCSS for TYPO3 13.',
+    'description' => 'FAQ extension using Content Blocks, Site Set, Schema, JS and SCSS for TYPO3 14.',
     'category' => 'fe',
     'author' => 'Gedankenfolger',
     'author_email' => 'dev@example.com',
     'state' => 'beta',
     'clearCacheOnLoad' => 1,
-    'version' => '13.6.3',
+    'version' => '14.0.1',
     'autoload' => [
         'psr-4' => [
             'Gedankenfolger\\GedankenfolgerFaq\\' => 'Classes',
@@ -16,8 +16,8 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'constraints' => [
         'depends' => [
-            'typo3' => '13.0.0-13.99.99',
-            'fluid' => '13.0.0-13.99.99',
+            'typo3' => '14.0.0-14.99.99',
+            'fluid' => '14.0.0-14.99.99',
         ],
         'conflicts' => [],
         'suggests' => [
