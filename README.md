@@ -1,11 +1,14 @@
 <h1>TYPO3 Extension Gedankenfolger FAQ<br/>(gedankenfolger-faq)</h1>
 <p>
     Compact FAQ extension using Content Blocks (Record Types + Content Elements), Site Set, SCSS, and vanilla JS.
+    Requires TYPO3 13.
 </p>
 <p>
     First of all many thanks to the hole TYPO3 community, all supporters of TYPO3.
     Especially to <a href="https://typo3.org/" target="_blank">TYPO3-Team</a> and <a href="https://www.gedankenfolger.de/" target="_blank">Gedankenfolger GmbH</a>.
 </p>
+
+> **TYPO3 14 support** is maintained on the [`main`](../../tree/main) branch.
 
 <h3>
     Contents of this file
@@ -22,6 +25,12 @@
     </li>
     <li>
         <a href="#options">Options</a>
+    </li>
+    <li>
+        <a href="#settings">Settings / Constants</a>
+    </li>
+    <li>
+        <a href="#template-overrides">Template Overrides</a>
     </li>
     <li>
         <a href="#notes">Notes</a>
@@ -50,22 +59,43 @@
     <li>
         SCSS (BEM) and no jQuery
     </li>
+    <li>
+        Template and partial overrides from your site package without forking the extension
+    </li>
 </ol>
 
 <h3 id="install">
     Install
 </h3>
-<ol>
-    <li>
-        Require in Composer and activate the extension.
-    </li>
-    <li>
-        Import the site set "Gedankenfolger FAQ" in your site configuration.
-    </li>
-    <li>
-        Ensure `ws_scss` is installed to compile `Resources/Public/Scss/faq.scss`.
-    </li>
-</ol>
+
+<h4>1. Require via Composer</h4>
+
+```bash
+composer require gedankenfolger/gedankenfolger-faq
+```
+
+Activate the extension in the TYPO3 backend (Extensions module) if not done automatically.
+
+<h4>2a. Include TypoScript via Site Set (recommended)</h4>
+
+Add the set to your site configuration:
+
+```yaml
+# config/sites/my-site/config.yaml
+sets:
+  - gedankenfolger/gedankenfolger-faq
+```
+
+<h4>2b. Include TypoScript via Classic Static Template</h4>
+
+For installations without Site Sets, include the static template in your TypoScript template record:
+
+`Web > Template > Edit > Includes > Include Static (from extensions)` → **Gedankenfolger FAQ**
+
+<h4>3. SCSS compilation</h4>
+
+Ensure `ws_scss` (`^13.1`) is installed to compile `Resources/Public/Scss/faq.scss`.
+Alternatively set `faq.scss.default = 0` and `faq.css.default = 1` to use the pre-compiled CSS.
 
 <h3 id="usage">
     Usage
@@ -78,7 +108,7 @@
         Insert the "FAQ" content element, point it to a storage folder with your FAQ items via "Storage folder".
     </li>
     <li>
-        Configure URL parameter name and schema toggle under site settings (`faq.parameterName`, `faq.schemaEnabled`).
+        Configure behaviour and style via site settings (SiteSet) or the TypoScript constant editor (Classic).
     </li>
 </ol>
 
@@ -98,6 +128,62 @@
   <li>Deep-linking via hash (<code>#faq-{uid}</code>) opens the targeted item and, when single-open-only is enabled, closes siblings within the same component.</li>
   <li>JavaScript is lightweight and instance-scoped via data attributes on the wrapper: <code>data-open-first</code>, <code>data-open-single-only</code>, and <code>data-faq-parameter</code>.</li>
 </ul>
+
+<h3 id="settings">
+    Settings / Constants
+</h3>
+
+All settings can be configured via Site Set settings (recommended) or the TypoScript constant editor.
+
+| Constant | Default | Description |
+|---|---|---|
+| `faq.parameterName` | `faq` | URL parameter name used for deep-linking |
+| `faq.schemaEnabled` | `1` | Output schema.org FAQPage markup |
+| `faq.templateRootPath` | _(empty)_ | Override path for templates (see below) |
+| `faq.partialRootPath` | _(empty)_ | Override path for partials (see below) |
+| `faq.css.default` | `1` | Load pre-compiled default CSS |
+| `faq.scss.default` | `1` | Load and compile default SCSS via ws_scss |
+| `faq.color.default` | `#ffffff` | Default text color |
+| `faq.bgcolor.default` | `#2f3b4a` | Default background color |
+| `faq.color.primary` | `#000000` | Primary text color |
+| `faq.bgcolor.primary` | `#005bbb` | Primary background color |
+| `faq.color.secondary` | `#000000` | Secondary text color |
+| `faq.bgcolor.secondary` | `#6c757d` | Secondary background color |
+| `faq.color.tertiary` | `#000000` | Tertiary text color |
+| `faq.bgcolor.tertiary` | `#b35f00` | Tertiary background color |
+| `faq.font.family` | system-ui, … | Font family |
+
+<h3 id="template-overrides">
+    Template Overrides
+</h3>
+
+Templates and partials can be overridden from your site package without modifying the extension.
+Only the files you actually want to change need to be created — all others fall back to the extension defaults.
+
+**Available templates:**
+- `Frontend.html` – main content element template
+
+**Available partials:**
+- `Frontend/Layout0/Faqs.html`
+- `Frontend/Layout0/FaqsByCategories.html`
+- `Frontend/Layout100/Faqs.html` _(Bootstrap accordion)_
+- `Frontend/Layout100/FaqsByCategories.html` _(Bootstrap accordion)_
+- `Frontend/Schema.html`
+
+**Via Site Set** (`config/sites/my-site/config.yaml`):
+
+```yaml
+settings:
+  faq.templateRootPath: 'EXT:my_sitepackage/Resources/Private/Templates/Faq/'
+  faq.partialRootPath: 'EXT:my_sitepackage/Resources/Private/Partials/Faq/'
+```
+
+**Via TypoScript constant editor / setup:**
+
+```typoscript
+faq.templateRootPath = EXT:my_sitepackage/Resources/Private/Templates/Faq/
+faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Partials/Faq/
+```
 
 <h3 id="notes">
     Notes
