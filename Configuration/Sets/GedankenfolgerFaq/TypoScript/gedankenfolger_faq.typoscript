@@ -1,13 +1,10 @@
 tt_content{
   gedankenfolger_faq {
-    templateName = Frontend
     templateRootPaths {
-      0 = EXT:gedankenfolger_faq/ContentBlocks/ContentElements/faq/templates/
-      10 = {$faq.templateRootPath}
+      100 = {$faq.templateRootPath}
     }
     partialRootPaths {
-      0 = EXT:gedankenfolger_faq/ContentBlocks/ContentElements/faq/templates/partials/
-      10 = {$faq.partialRootPath}
+      100 = {$faq.partialRootPath}
     }
     settings {
       parameterName = {$faq.parameterName}
