@@ -1,0 +1,16 @@
+faq.rootName = gedankenfolger_faq
+faq.parameterName = faq
+faq.schemaEnabled = 1
+
+faq.css.default = 1
+faq.scss.default = 1
+
+faq.color.default = #ffffff
+faq.bgcolor.default = #2f3b4a
+faq.color.primary = #000000
+faq.bgcolor.primary = #005bbb
+faq.color.secondary = #000000
+faq.bgcolor.secondary = #6c757d
+faq.color.tertiary = #000000
+faq.bgcolor.tertiary = #b35f00
+faq.font.family = system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
