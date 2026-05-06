@@ -2,7 +2,6 @@ faq.rootName = gedankenfolger_faq
 faq.parameterName = faq
 faq.schemaEnabled = 1
 
-faq.templateRootPath =
 faq.partialRootPath =
 
 faq.css.default = 1

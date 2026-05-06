@@ -139,7 +139,6 @@ All settings can be configured via Site Set settings (recommended) or the TypoSc
 |---|---|---|
 | `faq.parameterName` | `faq` | URL parameter name used for deep-linking |
 | `faq.schemaEnabled` | `1` | Output schema.org FAQPage markup |
-| `faq.templateRootPath` | _(empty)_ | Override path for templates (see below) |
 | `faq.partialRootPath` | _(empty)_ | Override path for partials (see below) |
 | `faq.css.default` | `1` | Load pre-compiled default CSS |
 | `faq.scss.default` | `1` | Load and compile default SCSS via ws_scss |
@@ -160,8 +159,35 @@ All settings can be configured via Site Set settings (recommended) or the TypoSc
 Templates and partials can be overridden from your site package without modifying the extension.
 Only the files you actually want to change need to be created — all others fall back to the extension defaults.
 
-**Available templates:**
+### Template override
+
+Set `file =` directly in your sitepackage TypoScript to replace the main template:
+
+```typoscript
+tt_content.gedankenfolger_faq {
+    file = EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/frontend.html
+}
+```
+
+**Available template:**
 - `frontend.html` – main content element template
+
+### Partial overrides
+
+Set `faq.partialRootPath` to a directory in your sitepackage. Only the partials you place there will be used; all others fall back to the extension defaults.
+
+**Via Site Set** (`config/sites/my-site/config.yaml`):
+
+```yaml
+settings:
+  faq.partialRootPath: 'EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/Partials/'
+```
+
+**Via TypoScript constant editor:**
+
+```typoscript
+faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/Partials/
+```
 
 **Available partials:**
 - `Frontend/Layout0/Faqs.html`
@@ -169,21 +195,6 @@ Only the files you actually want to change need to be created — all others fal
 - `Frontend/Layout100/Faqs.html` _(Bootstrap accordion)_
 - `Frontend/Layout100/FaqsByCategories.html` _(Bootstrap accordion)_
 - `Frontend/Schema.html`
-
-**Via Site Set** (`config/sites/my-site/config.yaml`):
-
-```yaml
-settings:
-  faq.templateRootPath: 'EXT:my_sitepackage/Resources/Private/Templates/Faq/'
-  faq.partialRootPath: 'EXT:my_sitepackage/Resources/Private/Partials/Faq/'
-```
-
-**Via TypoScript constant editor / setup:**
-
-```typoscript
-faq.templateRootPath = EXT:my_sitepackage/Resources/Private/Templates/Faq/
-faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Partials/Faq/
-```
 
 <h3 id="notes">
     Notes
