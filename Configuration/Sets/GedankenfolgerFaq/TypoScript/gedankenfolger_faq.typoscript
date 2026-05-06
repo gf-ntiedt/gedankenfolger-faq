@@ -1,8 +1,5 @@
 tt_content{
   gedankenfolger_faq {
-    templateRootPaths {
-      100 = {$faq.templateRootPath}
-    }
     partialRootPaths {
       100 = {$faq.partialRootPath}
     }
