@@ -298,6 +298,9 @@ final class FaqProcessor implements DataProcessorInterface
         $qb->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
 
         [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, 'sorting');
+        if (!$this->columnExistsInTable($table, $orderColumn)) {
+            $orderColumn = 'sorting';
+        }
         $orderByExpression = 'i.' . $orderColumn;
 
         $qb->select('i.*')
@@ -394,6 +397,9 @@ final class FaqProcessor implements DataProcessorInterface
         $qb->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
 
         [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, 'sorting');
+        if (!$this->columnExistsInTable(self::CATEGORY_TABLE, $orderColumn)) {
+            $orderColumn = 'sorting';
+        }
         $orderByExpression = 'c.' . $orderColumn;
 
         return $qb->select('c.*')
@@ -652,6 +658,21 @@ final class FaqProcessor implements DataProcessorInterface
         }
 
         return [$column, $direction];
+    }
+
+    private function columnExistsInTable(string $table, string $column): bool
+    {
+        static $systemColumns = [
+            'uid', 'pid', 'sorting', 'tstamp', 'crdate',
+            'starttime', 'endtime', 'hidden', 'deleted',
+            'sys_language_uid', 'l10n_parent', 'l10n_source',
+        ];
+
+        if (in_array($column, $systemColumns, true)) {
+            return true;
+        }
+
+        return isset($GLOBALS['TCA'][$table]['columns'][$column]);
     }
 
     /**
