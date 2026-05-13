@@ -24,7 +24,7 @@
       </h2>
       <div id="c{data.uid}-faq-item{faq.data.uid}-collapse" class="accordion-collapse collapse {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'show' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'show' )}" data-bs-parent="#c{data.uid}">
         <div class="accordion-body">
-          {faq.data.answer -> f:format.raw()}
+          {faq.data.answer -> f:format.html(parseFuncTSPath: 'lib.parseFunc_rteMinimal')}
         </div>
       </div>
     </div>
