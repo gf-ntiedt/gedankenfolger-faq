@@ -6,10 +6,21 @@
     "license": [
         "GPL-2.0-or-later"
     ],
+    "authors": [
+        {
+            "name": "Niels Tiedt, Gedankenfolger GmbH",
+            "email": "niels.tiedt@gedankenfolger.de",
+            "homepage": "https://www.gedankenfolger.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
-        "friendsoftypo3/content-blocks": "^1.3",
-        "brotkrueml/schema": "^4.0",
-        "wapplersystems/ws-scss": "^13.1"
+        "typo3/cms-core": "^13.0",
+        "friendsoftypo3/content-blocks": "^1.3"
+    },
+    "suggest": {
+        "brotkrueml/schema": "For schema.org FAQPage structured data output",
+        "wapplersystems/ws-scss": "For SCSS compilation of faq.scss; alternatively set faq.css.default = 1"
     },
     "autoload": {
         "psr-4": {
