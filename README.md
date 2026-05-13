@@ -213,3 +213,6 @@ In forks, derivatives, or further developments of this extension, the logo may o
 
 All other logos and icons bundled with this extension are either subject to the TYPO3 licensing terms (The MIT License (MIT), see https://typo3.org) or are in the public domain.
 </p>
+<p>
+For full license terms covering all graphic assets, see <a href="LICENSE-ICONS">LICENSE-ICONS</a>.
+</p>
