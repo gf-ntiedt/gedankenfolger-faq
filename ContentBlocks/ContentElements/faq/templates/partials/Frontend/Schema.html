@@ -5,12 +5,12 @@
     <schema:type.Question
         -isMainEntityOfWebPage="2"
         -as="mainEntity"
-        name="{faq.question}"
+        name="{faq.data.question}"
         inLanguage="{language.hreflang}"
     >
         <schema:type.Answer
             -as="acceptedAnswer"
-            text="{faq.answer -> f:format.raw()}"
+            text="{faq.data.answer -> f:format.html(parseFuncTSPath: 'lib.parseFunc_rteSchema')}"
         >
         </schema:type.Answer>
     </schema:type.Question>

@@ -1,0 +1,6 @@
+lib.parseFunc_rteMinimal < lib.parseFunc_RTE
+lib.parseFunc_rteMinimal.nonTypoTagStdWrap.encapsLines >
+
+lib.parseFunc_rteSchema < lib.parseFunc_rteMinimal
+lib.parseFunc_rteSchema.tags.a.typolink.forceAbsoluteUrl = 1
+lib.parseFunc_rteSchema.tags.link.typolink.forceAbsoluteUrl = 1

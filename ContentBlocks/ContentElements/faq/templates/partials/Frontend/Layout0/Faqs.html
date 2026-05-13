@@ -27,7 +27,7 @@
       </summary>
       <div class="{data.CType}__answer">
         <div class="{data.CType}__answer-inner">
-          {faq.data.answer -> f:format.raw()}
+          {faq.data.answer -> f:format.html(parseFuncTSPath: 'lib.parseFunc_rteMinimal')}
         </div>
       </div>
     </details>

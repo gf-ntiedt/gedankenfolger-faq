@@ -199,7 +199,16 @@ faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Extensions/Gedankenfo
 <h3 id="notes">
     Notes
 </h3>
-<p>...</p>
+
+<h4>⚠️ Required sitepackage configuration</h4>
+
+<h5>Disable e-mail spam protection</h5>
+<p>
+The sitepackage must set <code>config.spamProtectEmailAddresses = 0</code>.<br/>
+Without this setting, e-mail links in the FAQ schema (JSON-LD) appear as obfuscated
+<code>href="#"</code> and are worthless for search engines.<br/>
+This setting affects the entire site.
+</p>
 
 <h3 id="noticetrademark">
     Notice on Logo / Trademark Use
