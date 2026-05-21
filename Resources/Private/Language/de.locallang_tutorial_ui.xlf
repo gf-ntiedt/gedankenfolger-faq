@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-05-19">
+        <header>
+            <authorName>Niels Tiedt</authorName>
+            <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="gedankenfolger_faq.tour.prev">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.next">
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.finish">
+                <target>Fertig</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.back_home">
+                <target>← Auswahl</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.step_counter">
+                <target>Schritt {0} von {1}</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

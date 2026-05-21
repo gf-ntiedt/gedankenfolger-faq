@@ -1,0 +1,46 @@
+<f:variable name="xlf">LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_tutorial.xlf:gedankenfolger_faq.tour.</f:variable>
+<f:variable name="closeLabel"><f:translate key="{xlf}close" /></f:variable>
+<div id="gf-faq-tour" tabindex="-1" aria-labelledby="gf-faq-tour-label">
+
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="gf-faq-tour-label"><f:translate key="{xlf}title" /></h1>
+        <button type="button" class="btn btn-default" id="gf-faq-tour-close" aria-label="{closeLabel}">
+            <core:icon identifier="actions-close" size="small" />
+        </button>
+    </div>
+
+    <div class="offcanvas-body" id="gf-faq-tour-body">
+
+        <!-- Home -->
+        <div id="gf-faq-tour-home">
+            <p class="mb-3"><f:translate key="{xlf}home.intro" /></p>
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="overview"><f:translate key="{xlf}home.overview" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="catFolder"><f:translate key="{xlf}home.catFolder" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="category"><f:translate key="{xlf}home.category" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="faqFolder"><f:translate key="{xlf}home.faqFolder" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="faqItem"><f:translate key="{xlf}home.faqItem" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="contentBasic"><f:translate key="{xlf}home.contentBasic" /></button>
+                <button type="button" class="list-group-item list-group-item-action" data-gf-faq-track="contentAdvanced"><f:translate key="{xlf}home.contentAdvanced" /></button>
+            </div>
+        </div>
+
+        <f:render partial="Backend/Tutorial/Overview" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/CatFolder" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/Category" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/FaqFolder" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/FaqItem" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/ContentBasic" arguments="{_all}" />
+        <f:render partial="Backend/Tutorial/ContentAdvanced" arguments="{_all}" />
+
+    </div>
+
+    <div class="gf-faq-tour-footer">
+        <span class="text-muted small" id="gf-faq-tour-counter"></span>
+        <div>
+            <button type="button" class="btn btn-sm btn-default" id="gf-faq-tour-prev" hidden></button>
+            <button type="button" class="btn btn-sm btn-primary ms-2" id="gf-faq-tour-next" hidden></button>
+        </div>
+    </div>
+
+</div>

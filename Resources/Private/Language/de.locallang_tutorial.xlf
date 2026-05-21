@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-05-19">
+        <header>
+            <authorName>Niels Tiedt</authorName>
+            <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
+        </header>
+        <body>
+            <!-- Panel chrome -->
+            <trans-unit id="gedankenfolger_faq.tour.title">
+                <target>FAQ-Tutorial</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.close">
+                <target>Schließen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.prev">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.next">
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.finish">
+                <target>Fertig</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.back_home">
+                <target>← Auswahl</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.step_counter">
+                <target>Schritt {0} von {1}</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.help_button">
+                <target>Tutorial</target>
+            </trans-unit>
+
+            <!-- Home screen -->
+            <trans-unit id="gedankenfolger_faq.tour.home.intro">
+                <target>Zu welchem Thema möchtest du eine Anleitung?</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.overview">
+                <target>Überblick – Wie der FAQ-Bereich aufgebaut ist</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.catFolder">
+                <target>Systemordner „Kategorien" anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.category">
+                <target>Kategorie erstellen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.faqFolder">
+                <target>Systemordner „FAQ-Einträge" anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.faqItem">
+                <target>FAQ-Eintrag erstellen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.contentBasic">
+                <target>FAQ-Inhaltselement einrichten</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.home.contentAdvanced">
+                <target>Erweiterte Einstellungen des Inhaltselements</target>
+            </trans-unit>
+
+            <!-- Track: overview -->
+            <trans-unit id="gedankenfolger_faq.tour.overview.step1.title">
+                <target>Wie ein FAQ-Eintrag aufgebaut ist</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step1.intro">
+                <target>Jeder FAQ-Eintrag besteht aus einem Datensatz mit Frage und Antwort sowie einer Kategorienzuordnung.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step1.item1">
+                <target><![CDATA[<strong>Frage (Question)</strong> – Der Text, der als Überschrift im Akkordeon auf der Website angezeigt wird.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step1.item2">
+                <target><![CDATA[<strong>Antwort (Answer)</strong> – Freitextfeld mit Editor; Formatierungen wie Fettschrift, Listen und Links sind möglich.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step1.item3">
+                <target><![CDATA[Jeder Eintrag muss mindestens einer <strong>Kategorie</strong> zugeordnet sein – sonst wird er auf der Seite nicht ausgespielt.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.overview.step2.title">
+                <target>Das FAQ-Inhaltselement</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step2.intro">
+                <target>Das Inhaltselement verbindet die gespeicherten Daten und steuert, was auf der Seite angezeigt wird.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step2.item1">
+                <target><![CDATA[Reiter <strong>Datensätze</strong>: Legt den Speicherordner fest, aus dem die FAQ-Einträge gelesen werden.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step2.item2">
+                <target><![CDATA[Reiter <strong>Filter</strong>: Kategorieauswahl – nur Einträge der gewählten Kategorie werden angezeigt.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step2.item3">
+                <target><![CDATA[Reiter <strong>Einstellungen</strong>: Steuert das Akkordeon-Verhalten, z. B. ob immer nur eine Antwort geöffnet sein darf.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.overview.step3.title">
+                <target>Die Systemordner</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step3.intro">
+                <target>Der FAQ-Bereich basiert auf zwei Systemordnern im Seitenbaum.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step3.item1">
+                <target><![CDATA[<strong>Ordner FAQ-Einträge</strong> – Enthält alle Datensätze mit Fragen und Antworten.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step3.item2">
+                <target><![CDATA[<strong>Ordner Kategorien</strong> – Enthält die Themengruppen, denen FAQ-Einträge zugeordnet werden.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.overview.step3.item3">
+                <target>Beide Ordner müssen einmalig angelegt werden, bevor Inhalte erstellt werden können.</target>
+            </trans-unit>
+
+            <!-- Track: catFolder -->
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step1.title">
+                <target>Systemordner anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step1.intro">
+                <target>Lege einen Systemordner im Seitenbaum an, in dem die FAQ-Kategorien gespeichert werden.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step1.item1">
+                <target><![CDATA[Fahre im Seitenbaum über die Seite, unter der der Ordner erscheinen soll — klicke auf das <strong>„+"</strong>-Symbol.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step1.item2">
+                <target><![CDATA[Wähle im Assistenten den Seitentyp <strong>„Sys. Ordner"</strong> aus.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step2.title">
+                <target>Ordner benennen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step2.intro">
+                <target>Gib dem Ordner einen aussagekräftigen Namen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step2.item1">
+                <target><![CDATA[Trage einen Namen wie <strong>„Kategorien"</strong> oder <strong>„FAQ-Kategorien"</strong> ein.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.catFolder.step2.item2">
+                <target>Speichern. Der Ordner steht jetzt für Kategorie-Datensätze bereit.</target>
+            </trans-unit>
+
+            <!-- Track: category -->
+            <trans-unit id="gedankenfolger_faq.tour.category.step1.title">
+                <target>Kategorien-Ordner öffnen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step1.intro">
+                <target>Navigiere zum Kategorien-Ordner, um dort Datensätze zu verwalten.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step1.item1">
+                <target><![CDATA[Klicke im Seitenbaum auf den <strong>Kategorien</strong>-Ordner.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step1.item2">
+                <target><![CDATA[Öffne das <strong>Listen</strong>-Modul auf der rechten Seite.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.category.step2.title">
+                <target>Neue Kategorie anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step2.intro">
+                <target>Lege im Listen-Modul einen neuen Kategorie-Datensatz an.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step2.item1">
+                <target><![CDATA[Klicke oben rechts auf <strong>„+ Neue Kategorie"</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step2.item2">
+                <target><![CDATA[Trage einen <strong>Titel</strong> für die Kategorie ein.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step2.item3">
+                <target><![CDATA[Optional: Wähle eine <strong>übergeordnete Kategorie (Parent)</strong> für eine Hierarchie.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.category.step3.title">
+                <target>Speichern</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step3.intro">
+                <target>Speichere die Kategorie, damit sie für FAQ-Einträge verfügbar wird.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step3.item1">
+                <target><![CDATA[Klicke auf <strong>Speichern</strong> (Disketten-Symbol oben).]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.category.step3.tip">
+                <target>Die Kategorie ist jetzt im Reiter „Kategorien" beim Bearbeiten von FAQ-Einträgen auswählbar.</target>
+            </trans-unit>
+
+            <!-- Track: faqFolder -->
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step1.title">
+                <target>Systemordner anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step1.intro">
+                <target>Lege einen eigenen Systemordner für die FAQ-Einträge an.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step1.item1">
+                <target><![CDATA[Fahre im Seitenbaum über die gewünschte Stelle — klicke auf das <strong>„+"</strong>-Symbol.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step1.item2">
+                <target><![CDATA[Wähle den Seitentyp <strong>„Sys. Ordner"</strong> aus.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step2.title">
+                <target>Ordner benennen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step2.intro">
+                <target>Gib dem Ordner einen aussagekräftigen Namen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step2.item1">
+                <target><![CDATA[Trage einen Namen wie <strong>„FAQ-Einträge"</strong> oder <strong>„FAQs"</strong> ein.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step2.item2">
+                <target>Speichern.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqFolder.step2.tip">
+                <target>Tipp: Halte FAQ-Einträge und Kategorien in getrennten Ordnern für eine übersichtliche Struktur.</target>
+            </trans-unit>
+
+            <!-- Track: faqItem -->
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step1.title">
+                <target>FAQ-Ordner öffnen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step1.intro">
+                <target>Navigiere zum Ordner mit den FAQ-Einträgen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step1.item1">
+                <target><![CDATA[Klicke im Seitenbaum auf den <strong>FAQ-Einträge</strong>-Ordner.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step1.item2">
+                <target><![CDATA[Öffne das <strong>Listen</strong>-Modul auf der rechten Seite.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step1.item3">
+                <target>Du siehst die Liste aller vorhandenen Einträge.</target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step2.title">
+                <target>Neuen FAQ-Eintrag anlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step2.intro">
+                <target>Lege einen neuen Eintrag über das Listen-Modul an.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step2.item1">
+                <target><![CDATA[Klicke oben rechts auf <strong>„+ Neuer FAQ-Eintrag"</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step2.item2">
+                <target><![CDATA[Ein Formular öffnet sich — du befindest dich auf dem Reiter <strong>„Allgemein"</strong>.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step3.title">
+                <target>Frage und Antwort eingeben</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step3.intro">
+                <target>Fülle beide Felder im Reiter „Allgemein" aus.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step3.item1">
+                <target><![CDATA[<strong>Frage (Question)</strong> – Die Frage genau so, wie sie auf der Website erscheinen soll.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step3.item2">
+                <target><![CDATA[<strong>Antwort (Answer)</strong> – Die Antwort im Texteditor. Formatierungen wie Fettschrift, Listen und Links sind möglich.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.title">
+                <target>Kategorie zuweisen und speichern</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.intro">
+                <target>Weise dem Eintrag mindestens eine Kategorie zu, damit er auf der richtigen Seite erscheint.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.item1">
+                <target><![CDATA[Wechsle zum Reiter <strong>„Kategorien"</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.item2">
+                <target>Klicke auf die passende Kategorie — sie wird hervorgehoben.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.item3">
+                <target><![CDATA[Klicke auf <strong>Speichern</strong> (Disketten-Symbol), um den Eintrag zu veröffentlichen.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.faqItem.step4.tip">
+                <target>Um einen vorhandenen Eintrag zu bearbeiten, klicke in der Liste auf den Stift-Button neben dem Eintrag.</target>
+            </trans-unit>
+
+            <!-- Track: contentBasic -->
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step1.title">
+                <target>Inhaltselement öffnen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step1.intro">
+                <target>Öffne das FAQ-Inhaltselement auf der gewünschten Seite.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step1.item1">
+                <target><![CDATA[Navigiere zur Seite in der <strong>Layout</strong>-Ansicht.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step1.item2">
+                <target><![CDATA[Finde das FAQ-Inhaltselement und klicke auf den <strong>Stift-Button</strong>, um es zu bearbeiten.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step2.title">
+                <target>Speicherordner festlegen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step2.intro">
+                <target>Lege fest, aus welchem Ordner die FAQ-Einträge gelesen werden sollen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step2.item1">
+                <target><![CDATA[Öffne den Reiter <strong>Datensätze (Records)</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step2.item2">
+                <target><![CDATA[Setze den <strong>Speicherordner (Storage folder)</strong> auf deinen FAQ-Einträge-Ordner.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step3.title">
+                <target>Kategoriefilter setzen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step3.intro">
+                <target>Bestimme, welche FAQ-Einträge auf dieser Seite erscheinen sollen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step3.item1">
+                <target><![CDATA[Öffne den Reiter <strong>Filter</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step3.item2">
+                <target><![CDATA[Wähle unter <strong>Nach Kategorie (By category)</strong> die Kategorie, deren Einträge erscheinen sollen.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentBasic.step3.item3">
+                <target><![CDATA[<strong>Speichern</strong>.]]></target>
+            </trans-unit>
+
+            <!-- Track: contentAdvanced -->
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step1.title">
+                <target>Akkordeon-Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step1.intro">
+                <target>Steuere, wie sich das Akkordeon auf der Seite verhält.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step1.item1">
+                <target><![CDATA[Öffne den Reiter <strong>Einstellungen (Settings)</strong> im FAQ-Inhaltselement.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step1.item2">
+                <target><![CDATA[<strong>Nur ein Element gleichzeitig öffnen</strong> – Aktivieren, wenn immer nur eine Antwort sichtbar sein soll.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step1.item3">
+                <target><![CDATA[<strong>Element öffnen</strong> – Wähle, ob ein Element standardmäßig geöffnet sein soll (<strong>„Erstes"</strong> oder per <strong>UID</strong>).]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step2.title">
+                <target>Gruppierung nach Kategorie</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step2.intro">
+                <target>FAQ-Einträge können visuell nach Kategorie gruppiert werden.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step2.item1">
+                <target><![CDATA[Aktiviere <strong>Nach Kategorie gruppieren</strong>, um Einträge nach Thema zu trennen.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step2.item2">
+                <target><![CDATA[Aktiviere <strong>Kategorietitel anzeigen</strong>, um für jede Gruppe eine Überschrift einzublenden.]]></target>
+            </trans-unit>
+
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step3.title">
+                <target>Sortierung</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step3.intro">
+                <target>Steuere die Reihenfolge, in der Einträge und Kategorien erscheinen.</target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step3.item1">
+                <target><![CDATA[<strong>Sortieren nach (Sort by)</strong> – Wähle das Feld, nach dem FAQ-Einträge sortiert werden.]]></target>
+            </trans-unit>
+            <trans-unit id="gedankenfolger_faq.tour.contentAdvanced.step3.item2">
+                <target><![CDATA[<strong>Kategorien sortieren nach</strong> – Aktiv bei Gruppierung; steuert die Reihenfolge der Kategorien.]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

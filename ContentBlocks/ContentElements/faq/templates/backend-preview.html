@@ -15,6 +15,7 @@
   </f:section>
 
   <f:section name="Content">
+    <f:asset.script identifier="gf-faq-tour-trigger" src="EXT:gedankenfolger_faq/Resources/Public/JavaScript/BackendTutorialTrigger.js" />
     <div id="c{data.uid}" class="{data.CType}">
       <ul class="list-group">
         <f:if condition="{data.storageFolder}">
@@ -85,7 +86,7 @@
             <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem,gedankenfolger_faq_openByUid">
               <f:translate key="{cb:languagePath()}:openItem.label" />
             </be:link.editRecord>
-            
+
             <f:if condition="{data.openItem}=='first'">
               <f:then>
                 <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_openItem,gedankenfolger_faq_openByUid">
@@ -98,7 +99,7 @@
                 </be:link.editRecord>
               </f:else>
             </f:if>
-            
+
             <f:if condition="{data.openItem}=='uid' && {data.openByUid}">
               <div class="list-group">
                 <f:for each="{data.openByUid}" as="faq">
@@ -161,13 +162,20 @@
           </li>
         </f:if>
       </ul>
+
+      <div class="mt-2">
+        <button type="button" class="btn btn-sm btn-default" data-gf-faq-tour-start="0">
+          <core:icon identifier="actions-question-circle" size="small" />
+          <f:translate key="LLL:EXT:gedankenfolger_faq/Resources/Private/Language/locallang_tutorial.xlf:gedankenfolger_faq.tour.help_button" />
+        </button>
+      </div>
     </div>
   </f:section>
 
   <f:section name="Footer">
-      <div class="d-flex justify-content-between">
-        <be:link.editRecord uid="{data.uid}" table="tt_content">UID: {data.uid}</be:link.editRecord>
-        <be:link.editRecord uid="{data.uid}" table="tt_content">PID: {data.pid}</be:link.editRecord>
-      </div>
+    <div class="d-flex justify-content-between">
+      <be:link.editRecord uid="{data.uid}" table="tt_content">UID: {data.uid}</be:link.editRecord>
+      <be:link.editRecord uid="{data.uid}" table="tt_content">PID: {data.pid}</be:link.editRecord>
+    </div>
   </f:section>
 </html>
