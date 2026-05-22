@@ -1,5 +1,7 @@
 <?php
 
+$_EXTKEY = 'gedankenfolger_faq';
+
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Gedankenfolger FAQ',
     'description' => 'FAQ extension using Content Blocks, Site Set, Schema, JS and SCSS for TYPO3 13.',
