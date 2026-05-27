@@ -10,6 +10,13 @@
 
 > **TYPO3 14 support** is maintained on the [`main`](../../tree/main) branch.
 
+<h3>Code Quality</h3>
+<p>This extension is checked with the following tools:</p>
+<ul>
+    <li><a href="https://phpstan.org/" target="_blank">PHPStan</a> + <a href="https://github.com/saschaegerer/phpstan-typo3" target="_blank">phpstan-typo3</a> — static analysis</li>
+    <li><a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer" target="_blank">php-cs-fixer</a> + <a href="https://github.com/TYPO3/coding-standards" target="_blank">TYPO3 Coding Standards</a> — code style (PSR-12)</li>
+</ul>
+
 <h3>
     Contents of this file
 </h3>

@@ -1,7 +1,5 @@
 <?php
 
-$_EXTKEY = 'gedankenfolger_faq';
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Gedankenfolger FAQ',
     'description' => 'FAQ extension using Content Blocks, Site Set, Schema, JS and SCSS for TYPO3 13.',
@@ -10,7 +8,7 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'niels.tiedt@gedankenfolger.de',
     'state' => 'stable',
     'clearCacheOnLoad' => 1,
-    'version' => '13.8.2',
+    'version' => '13.8.3',
     'autoload' => [
         'psr-4' => [
             'Gedankenfolger\\GedankenfolgerFaq\\' => 'Classes',
@@ -24,7 +22,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [],
         'suggests' => [
             'ws_scss' => '',
-            'schema' => ''
+            'schema' => '',
         ],
     ],
 ];
