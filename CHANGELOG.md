@@ -1,6 +1,102 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [13.8.4] - 2026-05-29
+
+### Documentation
+
+- **readme:** Add changelog and acknowledgements sections, remove misplaced code quality block (cef49c4)
+
+
+## [13.8.2] - 2026-05-22
+
+### Fixed
+
+- **ext_emconf:** Define \$_EXTKEY variable to prevent phpstan undefined variable error (599f6eb)
+
+
+## [13.8.1] - 2026-05-13
+
+### Miscellaneous
+
+- Fix metadata – author, email, state, deps (6353cac)
+
+
+## [13.8.0] - 2026-05-13
+
+### Added
+
+- RTE parseFunc for FAQ answers and schema, add libs.typoscript (8be5456)
+
+
+## [13.7.7] - 2026-05-13
+
+### Added
+
+- Update icons, add LICENSE-ICONS, reference in README (48a7e95)
+
+
+## [13.7.6] - 2026-05-06
+
+### Added
+
+- Add global page.tsconfig for classic (non-SiteSet) installations (a60bf6a)
+
+
+## [13.7.5] - 2026-05-06
+
+### Fixed
+
+- Validate orderBy column against TCA before use in SQL ORDER BY (0e76ee7)
+
+
+## [13.7.4] - 2026-05-06
+
+### Fixed
+
+- Remove templateRootPaths – template override is via file = in sitepackage (7f66651)
+
+
+## [13.7.3] - 2026-05-05
+
+### Documentation
+
+- Fix frontend.html casing in README template override section (7867ad0)
+
+
+## [13.7.2] - 2026-05-05
+
+### Fixed
+
+- Correct templateRootPaths/partialRootPaths for Content Blocks compatibility (d75bdc8)
+
+
+## [13.7.1] - 2026-05-05
+
+### Documentation
+
+- Update README for v13.7.1 (259107f)
+
+
+## [13.7.0] - 2026-05-05
+
+### Added
+
+- Allow template and partial overrides via TypoScript constants (0a43ad5)
+
+
+## [13.6.4] - 2026-05-05
+
+### Added
+
+- Add classic static template for installations without SiteSets (88f4178)
+
+
+### Miscellaneous
+
+- Update to version 13.6.4 (9b60c2d)
+
+
 ## [13.8.2] - 2026-05-22
 
 ### Fixed
