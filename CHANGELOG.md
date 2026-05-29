@@ -1,6 +1,109 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [14.2.4] - 2026-05-29
+
+### Documentation
+
+- **readme:** Add changelog and acknowledgements sections, remove misplaced code quality block (6e64500)
+
+
+## [14.2.2] - 2026-05-22
+
+### Fixed
+
+- **emconf:** Define $_EXTKEY for phpstan compatibility (5e4ccd3)
+
+
+## [14.2.1] - 2026-05-13
+
+### Miscellaneous
+
+- Fix metadata – author, email, state, deps; add providesPackages (a61cb86)
+
+
+## [14.2.0] - 2026-05-13
+
+### Added
+
+- RTE parseFunc for FAQ answers and schema, add libs.typoscript (35762c0)
+
+
+## [14.1.7] - 2026-05-13
+
+### Added
+
+- Update icons, add LICENSE-ICONS, reference in README (a2020c8)
+
+
+## [14.1.6] - 2026-05-06
+
+### Added
+
+- Add global page.tsconfig for classic (non-SiteSet) installations (6ba240c)
+
+
+## [14.1.5] - 2026-05-06
+
+### Fixed
+
+- Validate orderBy column against table schema before use in SQL (2749527)
+
+
+## [14.1.4] - 2026-05-06
+
+### Fixed
+
+- Remove templateRootPaths – template override is via file = in sitepackage (00cdd29)
+
+
+## [14.1.3] - 2026-05-05
+
+### Documentation
+
+- Fix frontend.html casing in README template override section (2d7ab9c)
+
+
+## [14.1.2] - 2026-05-05
+
+### Fixed
+
+- Correct templateRootPaths/partialRootPaths for Content Blocks compatibility (3c1ca4b)
+
+
+## [14.1.1] - 2026-05-05
+
+### Documentation
+
+- Update README for v14.1.1 (3a7d465)
+
+
+## [14.1.0] - 2026-05-05
+
+### Added
+
+- Allow template and partial overrides via TypoScript constants (b67da10)
+
+
+## [14.0.1] - 2026-05-05
+
+### Added
+
+- Add classic static template for installations without SiteSets (c178b50)
+
+
+### Miscellaneous
+
+- Update to version 14.0.1 (dbf5203)
+
+
+## [14.0.0] - 2026-04-24
+
+### Miscellaneous
+
+- Migrate from v13 to v14 (fix deprecations) (3c1525b)
+
+
 ## [14.2.2] - 2026-05-22
 
 ### Fixed
