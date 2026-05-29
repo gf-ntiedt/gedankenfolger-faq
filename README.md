@@ -10,13 +10,6 @@
 
 > **TYPO3 13 support** is maintained on the [`13.x`](../../tree/13.x) branch.
 
-<h3>Code Quality</h3>
-<p>This extension is checked with the following tools:</p>
-<ul>
-    <li><a href="https://phpstan.org/" target="_blank">PHPStan</a> + <a href="https://github.com/saschaegerer/phpstan-typo3" target="_blank">phpstan-typo3</a> — static analysis</li>
-    <li><a href="https://github.com/PHP-CS-Fixer/PHP-CS-Fixer" target="_blank">php-cs-fixer</a> + <a href="https://github.com/TYPO3/coding-standards" target="_blank">TYPO3 Coding Standards</a> — code style (PSR-12)</li>
-</ul>
-
 <h3>
     Contents of this file
 </h3>
@@ -38,6 +31,12 @@
     </li>
     <li>
         <a href="#template-overrides">Template Overrides</a>
+    </li>
+    <li>
+        <a href="#changelog">Changelog</a>
+    </li>
+    <li>
+        <a href="#acknowledgements">Acknowledgements</a>
     </li>
     <li>
         <a href="#notes">Notes</a>
@@ -202,6 +201,25 @@ faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Extensions/Gedankenfo
 - `Frontend/Layout100/Faqs.html` _(Bootstrap accordion)_
 - `Frontend/Layout100/FaqsByCategories.html` _(Bootstrap accordion)_
 - `Frontend/Schema.html`
+
+<h3 id="changelog">
+    Changelog
+</h3>
+<p>
+    See <a href="CHANGELOG.md">CHANGELOG.md</a> — generated with <a href="https://git-cliff.org">git-cliff</a> from Conventional Commits.
+</p>
+
+<h3 id="acknowledgements">
+    Acknowledgements
+</h3>
+<p>
+    This extension builds on the following open source projects:
+</p>
+<ul>
+    <li><a href="https://github.com/FriendsOfTYPO3/content-blocks" target="_blank">TYPO3 Content Blocks</a></li>
+    <li><a href="https://github.com/brotkrueml/schema" target="_blank">Schema.org for TYPO3</a></li>
+    <li><a href="https://github.com/WapplerSystems/ws_scss" target="_blank">SASS Compiler for TYPO3</a></li>
+</ul>
 
 <h3 id="notes">
     Notes
