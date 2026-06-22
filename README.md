@@ -60,7 +60,7 @@
         Accessible accordion markup and deep-linking via configurable URL parameter
     </li>
     <li>
-        Optional schema.org FAQPage output via Brotkrueml/Schema
+        schema.org FAQPage structured data output via brotkrueml/schema
     </li>
     <li>
         SCSS (BEM) and no jQuery
@@ -100,8 +100,8 @@ For installations without Site Sets, include the static template in your TypoScr
 
 <h4>3. SCSS compilation</h4>
 
-Ensure `ws_scss` (`^14`) is installed to compile `Resources/Public/Scss/faq.scss`.
-Alternatively set `faq.scss.default = 0` and `faq.css.default = 1` to use the pre-compiled CSS.
+`ws_scss` is bundled as a dependency and compiles `Resources/Public/Scss/faq.scss` automatically.
+To use the pre-compiled CSS instead, set `faq.scss.default = 0` and `faq.css.default = 1`.
 
 <h3 id="usage">
     Usage
