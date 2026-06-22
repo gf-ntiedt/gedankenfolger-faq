@@ -8,7 +8,7 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'niels.tiedt@gedankenfolger.de',
     'state' => 'stable',
     'clearCacheOnLoad' => 1,
-    'version' => '13.8.4',
+    'version' => '13.8.5',
     'autoload' => [
         'psr-4' => [
             'Gedankenfolger\\GedankenfolgerFaq\\' => 'Classes',
@@ -16,13 +16,12 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'constraints' => [
         'depends' => [
-            'typo3' => '13.0.0-13.99.99',
+            'typo3' => '13.4.0-13.99.99',
             'content_blocks' => '1.3.0-1.99.99',
+            'ws_scss' => '13.0.0-13.99.99',
+            'schema' => '4.0.0-4.99.99',
         ],
         'conflicts' => [],
-        'suggests' => [
-            'ws_scss' => '',
-            'schema' => '',
-        ],
+        'suggests' => [],
     ],
 ];
