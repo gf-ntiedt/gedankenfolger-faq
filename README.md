@@ -151,7 +151,6 @@ All settings can be configured via Site Set settings (recommended) or the TypoSc
 |---|---|---|
 | `faq.parameterName` | `faq` | URL parameter name used for deep-linking |
 | `faq.schemaEnabled` | `1` | Output schema.org FAQPage markup |
-| `faq.partialRootPath` | _(empty)_ | Override path for partials (see below) |
 | `faq.css.default` | `1` | Load pre-compiled default CSS |
 | `faq.scss.default` | `1` | Load and compile default SCSS via ws_scss |
 | `faq.color.default` | `#ffffff` | Default text color |
@@ -186,19 +185,14 @@ tt_content.gedankenfolger_faq {
 
 ### Partial overrides
 
-Set `faq.partialRootPath` to a directory in your sitepackage. Only the partials you place there will be used; all others fall back to the extension defaults.
-
-**Via Site Set** (`config/sites/my-site/config.yaml`):
-
-```yaml
-settings:
-  faq.partialRootPath: 'EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/Partials/'
-```
-
-**Via TypoScript constant editor:**
+Set `partialRootPaths.100` directly in your sitepackage TypoScript. Only the partials you place there will be used; all others fall back to the extension defaults.
 
 ```typoscript
-faq.partialRootPath = EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/Partials/
+tt_content.gedankenfolger_faq {
+    partialRootPaths {
+        100 = EXT:my_sitepackage/Resources/Private/Extensions/GedankenfolgerFaq/Partials/
+    }
+}
 ```
 
 **Available partials:**

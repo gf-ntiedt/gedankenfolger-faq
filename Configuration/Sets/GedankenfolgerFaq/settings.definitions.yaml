@@ -26,13 +26,6 @@ settings:
     default: true
     category: GedankenfolgerFaq.settings
 
-  faq.partialRootPath:
-    label: 'Partial override path'
-    description: 'Path to custom partials that override the extension defaults (e.g. EXT:my_sitepackage/Resources/Private/Partials/Faq/).'
-    type: string
-    default: ''
-    category: GedankenfolgerFaq.settings
-
   faq.css.default:
     label: 'Load default CSS'
     type: bool
