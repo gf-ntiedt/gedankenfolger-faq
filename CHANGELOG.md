@@ -1,6 +1,13 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [13.10.0] - 2026-07-23
+
+### Fixed
+
+- **typoscript:** Remove partialRootPaths.100 override to unblock sitepackage overrides (3c5c1eb)
+
+
 ## [13.9.0] - 2026-06-23
 
 ## [13.8.5] - 2026-06-22
