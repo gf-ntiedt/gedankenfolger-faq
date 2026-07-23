@@ -1,8 +1,5 @@
 tt_content{
   gedankenfolger_faq {
-    partialRootPaths {
-      100 = {$faq.partialRootPath}
-    }
     settings {
       parameterName = {$faq.parameterName}
       schemaEnabled = {$faq.schemaEnabled}
