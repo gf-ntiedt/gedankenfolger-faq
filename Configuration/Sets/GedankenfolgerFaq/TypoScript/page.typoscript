@@ -8,13 +8,13 @@ page {
   }
 }
 
-[{$faq.css.default}==1] && [{$faq.scss.default}==0]
+[traverse(site('configuration'), 'settings/faq.css.default') == true] && [traverse(site('configuration'), 'settings/faq.scss.default') == false]
 page.includeCSS {
   gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
 }
 [global]
 
-[{$faq.scss.default}==1]
+[traverse(site('configuration'), 'settings/faq.scss.default') == true]
 page.includeCSS {
   gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Scss/faq.scss
   gedankenfolger_faq.outputfile = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
