@@ -45,8 +45,9 @@
           }
         }
 
-        &:open {
-          .#{$gf_faq_rootname}__question{
+        &[open] {
+          .#{$gf_faq_rootname}__question::after {
+            transform: rotate(180deg);
           }
         }
 
@@ -62,7 +63,7 @@
           .#{$gf_faq_rootname}__question{
             color: var(--gf-faq-color-default);
             background-color: var(--gf-faq-bgcolor-default);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cg fill='#{$gf_faq_color_default}'%3e%3cpath d='M12.95 7.843a.999.999 0 0 0-1.414 0L9 10.379V3a1 1 0 0 0-2 0v7.379L4.464 7.843A1 1 0 0 0 3.05 9.257l3.536 3.536.707.707a.999.999 0 0 0 1.414 0l.707-.707 3.536-3.536a1 1 0 0 0 0-1.414z'/%3e%3c/g%3e%3c/svg%3e");
             }
           }
@@ -71,7 +72,7 @@
           .#{$gf_faq_rootname}__question{
             color: var(--gf-faq-color-primary);
             background-color: var(--gf-faq-bgcolor-primary);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cg fill='#{$gf_faq_color_primary}'%3e%3cpath d='M12.95 7.843a.999.999 0 0 0-1.414 0L9 10.379V3a1 1 0 0 0-2 0v7.379L4.464 7.843A1 1 0 0 0 3.05 9.257l3.536 3.536.707.707a.999.999 0 0 0 1.414 0l.707-.707 3.536-3.536a1 1 0 0 0 0-1.414z'/%3e%3c/g%3e%3c/svg%3e");
             }
           }
@@ -80,7 +81,7 @@
           .#{$gf_faq_rootname}__question{
             color: var(--gf-faq-color-secondary);
             background-color: var(--gf-faq-bgcolor-secondary);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cg fill='#{$gf_faq_color_secondary}'%3e%3cpath d='M12.95 7.843a.999.999 0 0 0-1.414 0L9 10.379V3a1 1 0 0 0-2 0v7.379L4.464 7.843A1 1 0 0 0 3.05 9.257l3.536 3.536.707.707a.999.999 0 0 0 1.414 0l.707-.707 3.536-3.536a1 1 0 0 0 0-1.414z'/%3e%3c/g%3e%3c/svg%3e");
             }
           }
@@ -89,7 +90,7 @@
           .#{$gf_faq_rootname}__question{
             color: var(--gf-faq-color-tertiary);
             background-color: var(--gf-faq-bgcolor-tertiary);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cg fill='#{$gf_faq_color_tertiary}'%3e%3cpath d='M12.95 7.843a.999.999 0 0 0-1.414 0L9 10.379V3a1 1 0 0 0-2 0v7.379L4.464 7.843A1 1 0 0 0 3.05 9.257l3.536 3.536.707.707a.999.999 0 0 0 1.414 0l.707-.707 3.536-3.536a1 1 0 0 0 0-1.414z'/%3e%3c/g%3e%3c/svg%3e");
             }
           }
@@ -105,7 +106,7 @@
           .accordion-button {
             color: var(--gf-faq-color-default);
             background-color: var(--gf-faq-bgcolor-default);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$gf_faq_color_default}' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
             }
           }
@@ -117,7 +118,7 @@
           .accordion-button {
             color: var(--gf-faq-color-primary);
             background-color: var(--gf-faq-bgcolor-primary);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$gf_faq_color_primary}' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
             }
           }
@@ -129,7 +130,7 @@
           .accordion-button {
             color: var(--gf-faq-color-secondary);
             background-color: var(--gf-faq-bgcolor-secondary);
-            &:after{
+            &::after{
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$gf_faq_color_secondary}' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
             }
           }
@@ -141,8 +142,8 @@
           .accordion-button {
             color: var(--gf-faq-color-tertiary);
             background-color: var(--gf-faq-bgcolor-tertiary);
-            &:after{
-              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$gf_faq_color_default}' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+            &::after{
+              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='#{$gf_faq_color_tertiary}' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
             }
           }
         }

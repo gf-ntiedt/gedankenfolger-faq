@@ -16,13 +16,14 @@
   </div>
 
   <f:section name="Item">
+    <f:variable name="faqExpanded" value="{f:if(condition: '({data.gedankenfolger_faq_openItem} == \'first\' && {iterator.isFirst}) || ({data.gedankenfolger_faq_openItem} == \'uid\' && {data.gedankenfolger_faq_openByUid} == {faq.data.uid})', then: '1', else: '0')}" />
     <div id="faq-item{faq.data.uid}" class="accordion-item {data.CType}__accordionitem {data.CType}__accordionitem--{f:if(condition: faq.data.colorVariant, then: faq.data.colorVariant, else: 'default')}">
       <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c{data.uid}-faq-item{faq.data.uid}-collapse" aria-expanded="{f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'true',else: 'false' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'true',else: 'false' )}" aria-controls="c{data.uid}-faq-item{faq.data.uid}-collapse">
+        <button class="accordion-button{f:if(condition: faqExpanded, else: ' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#c{data.uid}-faq-item{faq.data.uid}-collapse" aria-expanded="{f:if(condition: faqExpanded, then: 'true', else: 'false')}" aria-controls="c{data.uid}-faq-item{faq.data.uid}-collapse">
           {faq.data.question}
         </button>
       </h2>
-      <div id="c{data.uid}-faq-item{faq.data.uid}-collapse" class="accordion-collapse collapse {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'first\' && {iterator.isFirst}',then: 'show' )} {f:if(condition: '{data.gedankenfolger_faq_openItem}==\'uid\' && {data.gedankenfolger_faq_openByUid}=={faq.data.uid}', then: 'show' )}" data-bs-parent="#c{data.uid}">
+      <div id="c{data.uid}-faq-item{faq.data.uid}-collapse" class="accordion-collapse collapse{f:if(condition: faqExpanded, then: ' show')}" data-bs-parent="#c{data.uid}">
         <div class="accordion-body">
           {faq.data.answer -> f:format.html(parseFuncTSPath: 'lib.parseFunc_rteMinimal')}
         </div>

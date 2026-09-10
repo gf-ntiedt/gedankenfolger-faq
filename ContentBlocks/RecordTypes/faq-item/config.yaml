@@ -13,7 +13,6 @@ fields:
     type: Tab
   - identifier: categories
     type: Category
-    allowed: 'sys_category'
     relationship: manyToMany
   - identifier: settings
     type: Tab
