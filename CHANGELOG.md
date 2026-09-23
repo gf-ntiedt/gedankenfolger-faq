@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [14.5.0] - 2026-09-23
+
+### Changed
+
+- **testing:** Remove Playwright E2E test setup and related CLI commands (9663a7b)
+
+
 ## [14.4.1] - 2026-09-10
 
 ### Fixed
@@ -240,7 +247,10 @@ All notable changes to this project will be documented in this file.
 
 - **faq:** Add category filtering and ordering (c6686c0)
 
-- **faq:** Replace GroupByCategoryProcessor with FaqProcessor (e37a730)
+- **faq:** ⚠ **BREAKING** Replace GroupByCategoryProcessor with FaqProcessor (e37a730)
+  - **BREAKING CHANGE:** TypoScript using GroupByCategoryProcessor must switch to
+
+FaqProcessor and update processor configuration keys.
 
 
 ### Changed
