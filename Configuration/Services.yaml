@@ -3,6 +3,3 @@ services:
     autowire: true
     autoconfigure: true
     public: false
-
-  Gedankenfolger\GedankenfolgerFaq\Command\:
-    resource: '../Classes/Command/*'
