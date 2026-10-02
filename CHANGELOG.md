@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.11.1] - 2026-10-02
+
+### Fixed
+
+- **typoscript:** Combine chained conditions into single bracket (75c97a4)
+
+- **config:** Move static template registration out of ext_tables.php (a7cd3ed)
+
+
 ## [13.11.0] - 2026-09-23
 
 ### Changed
