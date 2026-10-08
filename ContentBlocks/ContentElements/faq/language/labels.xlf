@@ -33,6 +33,9 @@
       <trans-unit id="filterByCategory.label">
         <source>By category</source>
       </trans-unit>
+      <trans-unit id="filterIncludeChildren.label">
+        <source>Also match items from child categories</source>
+      </trans-unit>
       <trans-unit id="tabs.tabSettings">
         <source>Settings</source>
       </trans-unit>

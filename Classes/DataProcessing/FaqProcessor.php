@@ -39,6 +39,9 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  *   (default: gedankenfolger_faq_groupByCategory)
  * - filterByCategoryField: content element field name providing selected category uids
  *   (default: gedankenfolger_faq_filterByCategory)
+ * - filterIncludeChildrenField: content element field name (checkbox) that expands the selected
+ *   filter categories by all their descendant categories via sys_category.parent
+ *   (default: gedankenfolger_faq_filterIncludeChildren)
  *
  * - resolveToRecordObjects: if true, additionally attaches Record objects:
  *   - each FAQ item gets "record"
@@ -101,6 +104,10 @@ final class FaqProcessor implements DataProcessorInterface
 
         $filterByCategoryField = (string)($processorConfiguration['filterByCategoryField'] ?? 'gedankenfolger_faq_filterByCategory');
         $filterCategoryUids = $this->normalizeIntegerList($cObj->data[$filterByCategoryField] ?? null);
+        $filterIncludeChildrenField = (string)($processorConfiguration['filterIncludeChildrenField'] ?? 'gedankenfolger_faq_filterIncludeChildren');
+        if ($filterCategoryUids !== [] && (int)($cObj->data[$filterIncludeChildrenField] ?? 0) === 1) {
+            $filterCategoryUids = $this->expandWithDescendantCategories($filterCategoryUids);
+        }
         $filterActive = $filterCategoryUids !== [];
 
         $resolveToRecordObjects = !empty($processorConfiguration['resolveToRecordObjects']) && $this->recordFactory !== null;
@@ -381,6 +388,45 @@ final class FaqProcessor implements DataProcessorInterface
         $allCategoryUids = array_values(array_unique($allCategoryUids));
 
         return [$uidsByForeignUid, $allCategoryUids];
+    }
+
+    /**
+     * Expand the given category uids by all their descendants (via sys_category.parent).
+     *
+     * Walks the tree level by level; categories that are deleted or hidden are skipped.
+     * Already collected uids are never visited again, so circular parent references end.
+     *
+     * @param int[] $categoryUids
+     * @return int[] the given uids followed by all descendant uids
+     */
+    private function expandWithDescendantCategories(array $categoryUids): array
+    {
+        $collected = array_fill_keys($categoryUids, true);
+        $currentLevel = $categoryUids;
+
+        while ($currentLevel !== []) {
+            $qb = $this->connectionPool->getQueryBuilderForTable(self::CATEGORY_TABLE);
+            $qb->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
+
+            $childUids = $qb->select('uid')
+                ->from(self::CATEGORY_TABLE)
+                ->where(
+                    $qb->expr()->in('parent', $qb->createNamedParameter($currentLevel, ArrayParameterType::INTEGER))
+                )
+                ->executeQuery()
+                ->fetchFirstColumn();
+
+            $currentLevel = [];
+            foreach ($childUids as $childUid) {
+                $childUid = (int)$childUid;
+                if ($childUid > 0 && !isset($collected[$childUid])) {
+                    $collected[$childUid] = true;
+                    $currentLevel[] = $childUid;
+                }
+            }
+        }
+
+        return array_keys($collected);
     }
 
     /**
