@@ -36,9 +36,11 @@ fields:
     type: Tab
   - identifier: filterByCategory
     type: Select
-    renderType: selectMultipleSideBySide
+    renderType: selectTree
     foreign_table: 'sys_category'
     foreign_table_where: 'ORDER BY sys_category.sorting'
+    treeConfig:
+      parentField: parent
     size: 5
     maxitems: 5
   - identifier: tabSettings
