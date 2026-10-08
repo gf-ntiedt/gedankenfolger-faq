@@ -76,6 +76,12 @@
                   {category.title}
                 </be:link.editRecord>
               </f:for>
+              <f:if condition="{data.filterIncludeChildren}">
+                <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_filterByCategory,gedankenfolger_faq_filterIncludeChildren" class="list-group-item list-group-item-action">
+                  <core:icon identifier="actions-check-circle" size="small" />
+                  <f:translate key="{cb:languagePath()}:filterIncludeChildren.label" />
+                </be:link.editRecord>
+              </f:if>
             </div>
           </li>
         </f:if>

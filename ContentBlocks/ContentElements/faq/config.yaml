@@ -43,6 +43,8 @@ fields:
       parentField: parent
     size: 5
     maxitems: 5
+  - identifier: filterIncludeChildren
+    type: Checkbox
   - identifier: tabSettings
     type: Tab
   - identifier: paletteOpenOnLoad

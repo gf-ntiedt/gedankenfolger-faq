@@ -33,6 +33,9 @@
       <trans-unit id="filterByCategory.label">
         <target>Nach Kategorie</target>
       </trans-unit>
+      <trans-unit id="filterIncludeChildren.label">
+        <target>Auch Einträge aus Unterkategorien einbeziehen</target>
+      </trans-unit>
       <trans-unit id="tabs.tabSettings">
         <target>Einstellungen</target>
       </trans-unit>
