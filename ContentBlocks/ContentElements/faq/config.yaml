@@ -40,7 +40,6 @@ fields:
     type: Text
     eval: alphanum_x
     placeholder: 'sorting'
-    searchable: false
   - identifier: categoryOrderDirection
     type: Select
     renderType: selectSingle
