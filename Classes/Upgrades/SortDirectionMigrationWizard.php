@@ -79,6 +79,7 @@ final class SortDirectionMigrationWizard implements UpgradeWizardInterface
      * Splits the stored values into column name and direction.
      *
      * @return bool
+     * @throws \Doctrine\DBAL\Exception
      */
     public function executeUpdate(): bool
     {
