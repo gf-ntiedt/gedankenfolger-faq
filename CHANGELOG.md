@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file.
 
+## [14.6.0] - 2026-10-09
+
+### Added
+
+- **faq:** Render category filter field as tree to show the category hierarchy (95400aa)
+
+- **faq:** Add option to include items from child categories in the category filter (1d44d7f)
+
+- **content-block:** Show more of the category tree in the filter field (4b8bf4c)
+
+- **faq:** Add separate sort direction fields for FAQ and category ordering (b7ea3bd)
+
+- **upgrade:** Add wizard that splits legacy sort direction values into separate fields (dcb3d91)
+
+- **upgrade:** Add extension prefix to the sort direction wizard title (15644f6)
+
+- **config:** Add ifEmpty defaults for the sort direction in the TypoScript set (7cb07dd)
+
+
+### Changed
+
+- **upgrade:** Pass explicit string type to the wizard LIKE parameter (f28b451)
+
+
+### Documentation
+
+- Document category filter, sorting options and sort direction upgrade note (00b7b41)
+
+- Document the sort direction upgrade wizard and the manual TypoScript migration (ca16cab)
+
+- **labels:** Explain that Sort by fields take a single column name and direction is a separate field (b99d803)
+
+- **upgrade:** Add PHPDoc to the wizard constructor (e157a68)
+
+- **upgrade:** Document the DBAL exception of the wizard update (2e8e0cf)
+
+
+### Fixed
+
+- **labels:** Correct xliff namespace URN in German labels (8b976e2)
+
+- **typoscript:** Rename filterField to filterByCategoryField so the processor reads it (e1b14fc)
+
+
+### Miscellaneous
+
+- Ignore local review notes file (29e2928)
+
+
 ## [14.5.2] - 2026-10-02
 
 ### Fixed
