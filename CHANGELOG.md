@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.13.0] - 2026-10-09
+
+### Added
+
+- **upgrade:** Add wizard replacing translated categories in the category filter (7037496)
+
+
+### Documentation
+
+- Add upgrade note for the category filter wizard (9a32f86)
+
+
+### Fixed
+
+- **license:** Replace GPLv3 text with GPLv2 to match composer.json (872829f)
+
+
+### Miscellaneous
+
+- Translate German comments in gitignore to English (c603d1b)
+
+
 ## [13.12.0] - 2026-10-09
 
 ### Added
