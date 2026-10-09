@@ -17,7 +17,7 @@ tt_content{
         orderDirection.ifEmpty = ASC
 
         categoryField = categories
-        filterField = gedankenfolger_faq_filterByCategory
+        filterByCategoryField = gedankenfolger_faq_filterByCategory
 
         categoryOrderBy.field = gedankenfolger_faq_categoryOrderBy
         categoryOrderBy.ifEmpty = sorting
