@@ -2,6 +2,67 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.12.0] - 2026-10-09
+
+### Added
+
+- **faq:** Render category filter field as tree to show the category hierarchy (e4c7b83)
+
+- **faq:** Add option to include items from child categories in the category filter (b6a6c26)
+
+- **content-block:** Show more of the category tree in the filter field (94464b4)
+
+- **faq:** Add separate sort direction fields for FAQ and category ordering (8a6f72b)
+
+- **upgrade:** Add wizard that splits legacy sort direction values into separate fields (41bfa93)
+
+- **upgrade:** Add extension prefix to the sort direction wizard title (3cc792b)
+
+- **config:** Add ifEmpty defaults for the sort direction in the TypoScript set (c10cd58)
+
+
+### Changed
+
+- **upgrade:** Pass explicit string type to the wizard LIKE parameter (876ca5f)
+
+
+### Documentation
+
+- Document category filter, sorting options and sort direction upgrade note (eb21577)
+
+- Document the sort direction upgrade wizard and the manual TypoScript migration (38030b5)
+
+- **labels:** Explain that Sort by fields take a single column name and direction is a separate field (03b3e95)
+
+- **upgrade:** Add PHPDoc to the wizard constructor (cc93f58)
+
+- **upgrade:** Document the DBAL exception of the wizard update (731dc17)
+
+- **upgrade:** Document the DBAL exception of updateNecessary (503eae8)
+
+
+### Fixed
+
+- **labels:** Correct xliff namespace URN in German labels (a4fbb01)
+
+- **typoscript:** Rename filterField to filterByCategoryField so the processor reads it (c3b2d95)
+
+- **upgrade:** Use the TYPO3 13 Install namespaces for the sort direction wizard (bd58dd9)
+
+- **deps:** Require typo3/cms-install for the upgrade wizard classes on TYPO3 13 (0c65829)
+
+- **content-block:** Remove searchable option unsupported by Content Blocks v1 (d8ceff9)
+
+- **content-block:** Limit the category filter tree to default-language categories (7117e95)
+
+
+### Miscellaneous
+
+- Ignore local review notes file (9350b0e)
+
+- Translate German section comment in gitignore (df0957b)
+
+
 ## [13.11.1] - 2026-10-02
 
 ### Fixed
