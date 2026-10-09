@@ -36,6 +36,9 @@ final class SortDirectionMigrationWizard implements UpgradeWizardInterface
 
     private const PATTERN = '/^([a-zA-Z0-9_-]+)\s+(ASC|DESC)$/i';
 
+    /**
+     * @param ConnectionPool $connectionPool
+     */
     public function __construct(
         private readonly ConnectionPool $connectionPool,
     ) {}
