@@ -121,7 +121,7 @@ final class SortDirectionMigrationWizard implements UpgradeWizardInterface
         foreach (array_keys(self::FIELD_PAIRS) as $orderByField) {
             $likeConditions[] = $queryBuilder->expr()->like(
                 $orderByField,
-                $queryBuilder->createNamedParameter('% %')
+                $queryBuilder->createNamedParameter('% %', Connection::PARAM_STR)
             );
         }
 
