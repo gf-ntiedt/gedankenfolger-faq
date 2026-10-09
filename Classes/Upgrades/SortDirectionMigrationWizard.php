@@ -47,7 +47,7 @@ final class SortDirectionMigrationWizard implements UpgradeWizardInterface
      */
     public function getTitle(): string
     {
-        return 'Migrate FAQ sort direction into the separate sort direction fields';
+        return 'EXT:gedankenfolger_faq: Move sort direction from the Sort by fields into the sort direction fields';
     }
 
     /**
