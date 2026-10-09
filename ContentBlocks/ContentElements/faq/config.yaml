@@ -53,7 +53,7 @@ fields:
     type: Select
     renderType: selectTree
     foreign_table: 'sys_category'
-    foreign_table_where: 'ORDER BY sys_category.sorting'
+    foreign_table_where: 'AND {#sys_category}.{#sys_language_uid} IN (-1, 0) ORDER BY sys_category.sorting'
     treeConfig:
       parentField: parent
     size: 20
