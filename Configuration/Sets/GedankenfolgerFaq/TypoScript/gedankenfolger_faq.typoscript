@@ -13,12 +13,14 @@ tt_content{
         recursive.field = gedankenfolger_faq_recursive
         orderBy.field = gedankenfolger_faq_orderBy
         orderBy.ifEmpty = sorting
+        orderDirection.field = gedankenfolger_faq_orderDirection
 
         categoryField = categories
         filterField = gedankenfolger_faq_filterByCategory
 
         categoryOrderBy.field = gedankenfolger_faq_categoryOrderBy
         categoryOrderBy.ifEmpty = sorting
+        categoryOrderDirection.field = gedankenfolger_faq_categoryOrderDirection
 
         asFlat = faqs
         asGrouped = faqsByCategory

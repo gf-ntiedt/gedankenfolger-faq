@@ -54,6 +54,17 @@
           </li>
         </f:if>
 
+        <f:if condition="{data.orderDirection} == 'DESC'">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_orderDirection">
+              <f:translate key="{cb:languagePath()}:orderDirection.label" />
+            </be:link.editRecord>
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_orderDirection">
+              <f:translate key="{cb:languagePath()}:orderDirection.items.{data.orderDirection}.label" />
+            </be:link.editRecord>
+          </li>
+        </f:if>
+
         <f:if condition="{data.categoryOrderBy}">
           <li class="list-group-item d-flex justify-content-between">
             <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderBy">
@@ -61,6 +72,17 @@
             </be:link.editRecord>
             <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderBy">
               <span>{data.categoryOrderBy}</span>
+            </be:link.editRecord>
+          </li>
+        </f:if>
+
+        <f:if condition="{data.categoryOrderDirection} == 'DESC'">
+          <li class="list-group-item d-flex justify-content-between">
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderDirection">
+              <f:translate key="{cb:languagePath()}:categoryOrderDirection.label" />
+            </be:link.editRecord>
+            <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_categoryOrderDirection">
+              <f:translate key="{cb:languagePath()}:categoryOrderDirection.items.{data.categoryOrderDirection}.label" />
             </be:link.editRecord>
           </li>
         </f:if>

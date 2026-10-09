@@ -26,11 +26,13 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  * - table: FAQ table name (default: tx_gedankenfolger_faq_item)
  * - pidInList / pidInList.field / pidInList.{field}: storage PID(s), comma-separated supported
  * - recursive / recursive.field / recursive.{field}: page recursion depth (default: 0)
- * - orderBy / orderBy.field / orderBy.{field,ifEmpty}: FAQ ordering (default: sorting ASC)
+ * - orderBy / orderBy.field / orderBy.{field,ifEmpty}: FAQ ordering column (default: sorting)
+ * - orderDirection.field / orderDirection.ifEmpty: ASC or DESC for orderBy (default: ASC)
  *
  * - categoryField: relation field name in sys_category_record_mm.fieldname (default: categories)
- * - categoryOrderBy / categoryOrderBy.field / categoryOrderBy.{field,ifEmpty}: category ordering
- *   (default: sorting ASC; refers to sys_category.<column>)
+ * - categoryOrderBy / categoryOrderBy.field / categoryOrderBy.{field,ifEmpty}: category ordering column
+ *   (default: sorting; refers to sys_category.<column>)
+ * - categoryOrderDirection.field / categoryOrderDirection.ifEmpty: ASC or DESC for categoryOrderBy (default: ASC)
  *
  * - asFlat: target key for flat list (default: faqs)
  * - asGrouped: target key for grouped list (default: faqsByCategory)
@@ -94,10 +96,12 @@ final class FaqProcessor implements DataProcessorInterface
         $asFlat = (string)($processorConfiguration['asFlat'] ?? 'faqs');
         $asGrouped = (string)($processorConfiguration['asGrouped'] ?? ($processorConfiguration['as'] ?? 'faqsByCategory'));
 
-        $orderByFaq = $this->resolveOrderBy($processorConfiguration, $cObj, 'orderBy', 'sorting');
+        $orderByFaq = $this->resolveStringConfig($processorConfiguration, $cObj, 'orderBy', 'sorting');
+        $orderDirectionFaq = $this->resolveStringConfig($processorConfiguration, $cObj, 'orderDirection', 'ASC');
         $recursive = $this->resolveIntFromConfig($processorConfiguration, $cObj, 'recursive', 0);
 
-        $categoryOrderBy = $this->resolveOrderBy($processorConfiguration, $cObj, 'categoryOrderBy', 'sorting');
+        $categoryOrderBy = $this->resolveStringConfig($processorConfiguration, $cObj, 'categoryOrderBy', 'sorting');
+        $categoryOrderDirection = $this->resolveStringConfig($processorConfiguration, $cObj, 'categoryOrderDirection', 'ASC');
 
         $groupByCategoryField = (string)($processorConfiguration['groupByCategoryField'] ?? 'gedankenfolger_faq_groupByCategory');
         $groupEnabled = (int)($cObj->data[$groupByCategoryField] ?? 0) === 1;
@@ -125,6 +129,7 @@ final class FaqProcessor implements DataProcessorInterface
             $table,
             $pidsToQuery,
             $orderByFaq,
+            $orderDirectionFaq,
             $categoryField,
             $filterCategoryUids
         );
@@ -167,7 +172,7 @@ final class FaqProcessor implements DataProcessorInterface
         }
 
         // Fetch category rows once, ordered.
-        $categoryRows = $this->fetchCategoryRows($allCategoryUids, $categoryOrderBy);
+        $categoryRows = $this->fetchCategoryRows($allCategoryUids, $categoryOrderBy, $categoryOrderDirection);
         $categoryRowByUid = [];
         foreach ($categoryRows as $catRow) {
             $uid = (int)($catRow['uid'] ?? 0);
@@ -298,13 +303,14 @@ final class FaqProcessor implements DataProcessorInterface
         string $table,
         array $pidsToQuery,
         string $orderBy,
+        string $orderDirection,
         string $categoryField,
         array $filterCategoryUids
     ): array {
         $qb = $this->connectionPool->getQueryBuilderForTable($table);
         $qb->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
 
-        [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, 'sorting');
+        [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, $orderDirection, 'sorting');
         $orderByExpression = 'i.' . $orderColumn;
 
         if (!$this->columnExistsInTable($table, $orderColumn)) {
@@ -430,12 +436,12 @@ final class FaqProcessor implements DataProcessorInterface
     }
 
     /**
-     * Fetch sys_category rows for the given uids, ordered by $orderBy.
+     * Fetch sys_category rows for the given uids, ordered by $orderBy in $orderDirection.
      *
      * @param int[] $categoryUids
      * @return array<int, array<string|int, mixed>>
      */
-    private function fetchCategoryRows(array $categoryUids, string $orderBy): array
+    private function fetchCategoryRows(array $categoryUids, string $orderBy, string $orderDirection): array
     {
         if ($categoryUids === []) {
             return [];
@@ -444,7 +450,7 @@ final class FaqProcessor implements DataProcessorInterface
         $qb = $this->connectionPool->getQueryBuilderForTable(self::CATEGORY_TABLE);
         $qb->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
 
-        [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, 'sorting');
+        [$orderColumn, $orderDirection] = $this->sanitizeOrderBy($orderBy, $orderDirection, 'sorting');
 
         if (!$this->columnExistsInTable(self::CATEGORY_TABLE, $orderColumn)) {
             $orderColumn = 'sorting';
@@ -555,11 +561,11 @@ final class FaqProcessor implements DataProcessorInterface
     }
 
     /**
-     * Resolve a string orderBy config with optional ".field" and ".ifEmpty" semantics.
+     * Resolve a string config value (orderBy, orderDirection, ...) with optional ".field" and ".ifEmpty" semantics.
      *
      * @param array<string|int, mixed> $processorConfiguration
      */
-    private function resolveOrderBy(
+    private function resolveStringConfig(
         array $processorConfiguration,
         ContentObjectRenderer $cObj,
         string $key,
@@ -673,41 +679,20 @@ final class FaqProcessor implements DataProcessorInterface
     }
 
     /**
-     * Sanitize an orderBy string into [column, direction].
-     * Only allows column names consisting of [a-zA-Z0-9_].
-     *
-     * Accepted formats:
-     * - "sorting"
-     * - "sorting ASC"
-     * - "sorting DESC"
+     * Sanitize a column name and a direction for use in an ORDER BY clause.
+     * The column must be a single word of [a-zA-Z0-9_]; anything else falls back to $defaultColumn.
+     * The direction is ASC unless it is exactly DESC (case-insensitive).
      *
      * @return array{0: string, 1: 'ASC'|'DESC'}
      */
-    private function sanitizeOrderBy(string $orderBy, string $defaultColumn): array
+    private function sanitizeOrderBy(string $column, string $direction, string $defaultColumn): array
     {
-        $orderBy = trim($orderBy);
-        $column = $defaultColumn;
-        $direction = 'ASC';
-
-        if ($orderBy !== '') {
-            $candidate = $orderBy;
-            $dir = 'ASC';
-
-            if (preg_match('/^([a-zA-Z0-9_]+)\s+(ASC|DESC)$/i', $orderBy, $m)) {
-                $candidate = $m[1];
-                $dir = strtoupper($m[2]);
-            }
-
-            if (preg_match('/^[a-zA-Z0-9_]+$/', $candidate)) {
-                $column = $candidate;
-            }
-
-            if ($dir === 'ASC' || $dir === 'DESC') {
-                $direction = $dir;
-            }
+        $column = trim($column);
+        if (preg_match('/^[a-zA-Z0-9_-]+$/', $column) !== 1) {
+            $column = $defaultColumn;
         }
 
-        return [$column, $direction];
+        return [$column, strtoupper(trim($direction)) === 'DESC' ? 'DESC' : 'ASC'];
     }
 
     /**
