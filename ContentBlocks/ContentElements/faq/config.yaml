@@ -28,10 +28,26 @@ fields:
       upper: 10
   - identifier: orderBy
     type: Text
+    eval: alphanum_x
+  - identifier: orderDirection
+    type: Select
+    renderType: selectSingle
+    default: ASC
+    items:
+      - value: ASC
+      - value: DESC
   - identifier: categoryOrderBy
     type: Text
+    eval: alphanum_x
     placeholder: 'sorting'
     searchable: false
+  - identifier: categoryOrderDirection
+    type: Select
+    renderType: selectSingle
+    default: ASC
+    items:
+      - value: ASC
+      - value: DESC
   - identifier: tabFilter
     type: Tab
   - identifier: filterByCategory
