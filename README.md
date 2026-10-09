@@ -136,6 +136,23 @@ To use the pre-compiled CSS instead, set `faq.scss.default = 0` and `faq.css.def
   The sort direction is no longer part of the "Sort by" fields. A direction in these fields (for example <code>question DESC</code>) or in TypoScript (for example <code>orderBy = sorting DESC</code>) is not evaluated anymore and falls back to <code>sorting</code> ascending.
   Select the direction in the new sort direction fields instead. To set a direction globally via TypoScript, use <code>orderDirection.ifEmpty = DESC</code> and <code>categoryOrderDirection.ifEmpty = DESC</code>.
 </p>
+<p>
+  <strong>Existing content elements:</strong> the upgrade wizard <code>gedankenfolgerFaqSortDirectionMigration</code> splits stored values like <code>question DESC</code> into the column name and the sort direction field. Run it in the Install Tool (Upgrade Wizard) or on the CLI (path to the TYPO3 binary may differ in your setup) after the database schema update:
+</p>
+
+```bash
+vendor/bin/typo3 upgrade:list
+vendor/bin/typo3 upgrade:run gedankenfolgerFaqSortDirectionMigration
+```
+
+<p>
+  Notes:
+</p>
+<ol>
+  <li>Only the values stored in the content elements are migrated. A direction set in your own TypoScript (for example <code>orderBy = sorting DESC</code>) is <strong>not</strong> migrated and must be changed manually to <code>orderBy = sorting</code> plus <code>orderDirection.ifEmpty = DESC</code> (and the same for <code>categoryOrderBy</code> / <code>categoryOrderDirection</code>).</li>
+  <li>Values without a trailing <code>ASC</code> or <code>DESC</code> are not changed. A value separated by a tab instead of a space is not detected.</li>
+  <li>If old values appear later (for example after importing an older database dump), mark the wizard as undone and run it again: <code>vendor/bin/typo3 upgrade:mark:undone gedankenfolgerFaqSortDirectionMigration</code> (or via the Install Tool).</li>
+</ol>
 
 <h4>Behavior and accessibility</h4>
 <ul>
