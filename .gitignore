@@ -46,7 +46,7 @@ config/system/additional.php
 
 .env
 
-# Andere Repos
+# Other repositories
 
 # Local review notes
 review.md
