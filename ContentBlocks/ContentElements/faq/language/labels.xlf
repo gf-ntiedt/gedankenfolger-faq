@@ -19,7 +19,7 @@
         <source>Sort by table field</source>
       </trans-unit>
       <trans-unit id="orderBy.description">
-        <source>If empty defaults to sorting. Valid fields: question, answer, sorting, uid</source>
+        <source>A single field name, no direction (select it in "Sort direction"). If empty defaults to sorting. Valid fields: question, answer, sorting, uid</source>
       </trans-unit>
       <trans-unit id="orderDirection.label">
         <source>Sort direction</source>
@@ -34,7 +34,7 @@
         <source>Sort categories by table field</source>
       </trans-unit>
       <trans-unit id="categoryOrderBy.description">
-        <source>If empty defaults to sorting. Valid fields: title, sorting, uid</source>
+        <source>A single field name, no direction (select it in "Category sort direction"). If empty defaults to sorting. Valid fields: title, sorting, uid</source>
       </trans-unit>
       <trans-unit id="categoryOrderDirection.label">
         <source>Category sort direction</source>
