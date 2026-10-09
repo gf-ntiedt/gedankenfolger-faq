@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Gedankenfolger\GedankenfolgerFaq\Upgrades;
 
-use TYPO3\CMS\Core\Attribute\UpgradeWizard;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Upgrades\DatabaseUpdatedPrerequisite;
-use TYPO3\CMS\Core\Upgrades\UpgradeWizardInterface;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
+use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
+use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Splits a sort direction stored in the "Sort by" text fields (for example "question DESC")
