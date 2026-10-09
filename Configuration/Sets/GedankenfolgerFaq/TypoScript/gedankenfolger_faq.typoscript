@@ -14,6 +14,7 @@ tt_content{
         orderBy.field = gedankenfolger_faq_orderBy
         orderBy.ifEmpty = sorting
         orderDirection.field = gedankenfolger_faq_orderDirection
+        orderDirection.ifEmpty = ASC
 
         categoryField = categories
         filterField = gedankenfolger_faq_filterByCategory
@@ -21,6 +22,7 @@ tt_content{
         categoryOrderBy.field = gedankenfolger_faq_categoryOrderBy
         categoryOrderBy.ifEmpty = sorting
         categoryOrderDirection.field = gedankenfolger_faq_categoryOrderDirection
+        categoryOrderDirection.ifEmpty = ASC
 
         asFlat = faqs
         asGrouped = faqsByCategory
