@@ -126,7 +126,16 @@ To use the pre-compiled CSS instead, set `faq.scss.default = 0` and `faq.css.def
   <li><strong>Open single only</strong>: ensures only one FAQ can be open at a time (per component instance).</li>
   <li><strong>Group by category</strong>: groups items by their assigned sys_category.</li>
   <li><strong>Show category titles</strong>: when grouping is enabled, renders category headings above each group.</li>
+  <li><strong>Filter by category</strong>: select categories in a tree to show only FAQ items of those categories. Optionally include their child categories.</li>
+  <li><strong>Sort by</strong> / <strong>Category sort by</strong>: a single column name (letters, digits, <code>_</code> and <code>-</code>, no spaces) used to order FAQ items and categories. Unknown columns fall back to <code>sorting</code>.</li>
+  <li><strong>Sort direction</strong> / <strong>Category sort direction</strong>: ascending (default) or descending, selected separately from the column name.</li>
 </ul>
+
+<h4>Upgrade note</h4>
+<p>
+  The sort direction is no longer part of the "Sort by" fields. A direction in these fields (for example <code>question DESC</code>) or in TypoScript (for example <code>orderBy = sorting DESC</code>) is not evaluated anymore and falls back to <code>sorting</code> ascending.
+  Select the direction in the new sort direction fields instead. To set a direction globally via TypoScript, use <code>orderDirection.ifEmpty = DESC</code> and <code>categoryOrderDirection.ifEmpty = DESC</code>.
+</p>
 
 <h4>Behavior and accessibility</h4>
 <ul>
