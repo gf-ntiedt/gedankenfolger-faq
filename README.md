@@ -154,6 +154,19 @@ vendor/bin/typo3 upgrade:run gedankenfolgerFaqSortDirectionMigration
   <li>If old values appear later (for example after importing an older database dump), mark the wizard as undone and run it again: <code>vendor/bin/typo3 upgrade:mark:undone gedankenfolgerFaqSortDirectionMigration</code> (or via the Install Tool).</li>
 </ol>
 
+<h4>Upgrade note: category filter</h4>
+<p>
+  The category tree of <strong>Filter by category</strong> lists only categories of the default language (and categories for all languages), the same as the core category fields. Translated categories stored in this field before are not visible in the tree anymore and never matched an FAQ item. Saving the content element after a click in the tree would silently drop them, which turns an empty result into a list of all FAQs.
+</p>
+<p>
+  <strong>Existing content elements:</strong> the upgrade wizard <code>gedankenfolgerFaqFilterCategoryTranslationMigration</code> replaces stored translated categories with their default language category. Translated categories without a default language parent are not changed. Run it after the database schema update:
+</p>
+
+```bash
+vendor/bin/typo3 upgrade:list
+vendor/bin/typo3 upgrade:run gedankenfolgerFaqFilterCategoryTranslationMigration
+```
+
 <h4>Behavior and accessibility</h4>
 <ul>
   <li>Markup uses native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> for accessible accordion behavior.</li>
