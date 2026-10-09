@@ -69,6 +69,7 @@ final class SortDirectionMigrationWizard implements UpgradeWizardInterface
      * Returns true if at least one FAQ content element stores a direction in a "Sort by" field.
      *
      * @return bool
+     * @throws \Doctrine\DBAL\Exception
      */
     public function updateNecessary(): bool
     {

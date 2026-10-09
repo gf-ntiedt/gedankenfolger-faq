@@ -65,6 +65,7 @@ final class FilterCategoryTranslationMigrationWizard implements UpgradeWizardInt
      * Returns true if at least one FAQ content element stores a translated category in the filter.
      *
      * @return bool
+     * @throws \Doctrine\DBAL\Exception
      */
     public function updateNecessary(): bool
     {
