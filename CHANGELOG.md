@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.13.1] - 2026-10-12
+
+### Added
+
+- **backend:** Show sort field and direction side by side in palettes (9a1ac4c)
+
+
+### Documentation
+
+- **labels:** Drop redundant sort direction hint from sort field descriptions (5dabf8c)
+
+
 ## [13.13.0] - 2026-10-09
 
 ### Added
