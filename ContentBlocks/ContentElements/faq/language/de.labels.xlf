@@ -25,7 +25,7 @@
         <target>Sortieren nach Tabellen-Feld</target>
       </trans-unit>
       <trans-unit id="orderBy.description">
-        <target>Nur ein einzelner Feldname, ohne Richtung (Richtung unter „Sortierrichtung“ wählen). Wenn leer, nach dem Feld sorting. Gültige Felder: question, answer, sorting, uid</target>
+        <target>Wenn leer, nach dem Feld sorting. Gültige Felder: question, answer, sorting, uid</target>
       </trans-unit>
       <trans-unit id="orderDirection.label">
         <target>Sortierrichtung</target>
@@ -40,7 +40,7 @@
         <target>Kategorien sortieren nach Tabellen-Feld</target>
       </trans-unit>
       <trans-unit id="categoryOrderBy.description">
-        <target>Nur ein einzelner Feldname, ohne Richtung (Richtung unter „Kategorien-Sortierrichtung“ wählen). Wenn leer, nach dem Feld sorting. Gültige Felder: title, sorting, uid</target>
+        <target>Wenn leer, nach dem Feld sorting. Gültige Felder: title, sorting, uid</target>
       </trans-unit>
       <trans-unit id="categoryOrderDirection.label">
         <target>Kategorien-Sortierrichtung</target>
