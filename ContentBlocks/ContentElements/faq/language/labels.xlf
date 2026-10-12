@@ -15,6 +15,12 @@
       <trans-unit id="recursive.label">
         <source>Number of recursive levels for the storage folder (sysfolder)</source>
       </trans-unit>
+      <trans-unit id="palettes.paletteOrder.label">
+        <source>Sorting</source>
+      </trans-unit>
+      <trans-unit id="palettes.paletteCategoryOrder.label">
+        <source>Category sorting</source>
+      </trans-unit>
       <trans-unit id="orderBy.label">
         <source>Sort by table field</source>
       </trans-unit>
