@@ -102,6 +102,9 @@ For installations without Site Sets, include the static template in your TypoScr
 
 `ws_scss` is bundled as a dependency and compiles `Resources/Public/Scss/faq.scss` automatically.
 To use the pre-compiled CSS instead, set `faq.scss.default = 0` and `faq.css.default = 1`.
+To load no default stylesheet at all (for example because your sitepackage ships its own FAQ styles), set both `faq.scss.default` and `faq.css.default` to `0`.
+
+> **Upgrade note:** in versions 14.5.2 to 14.7.1 the Site Set included no stylesheet at all because of a faulty condition. Since 14.7.2 these settings take effect again, so the default stylesheet is loaded once more. If you added the FAQ styles yourself in the meantime, set both settings to `0` to avoid loading them twice.
 
 <h3 id="usage">
     Usage
