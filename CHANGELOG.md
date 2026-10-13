@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [14.7.2] - 2026-10-13
+
+### Documentation
+
+- **readme:** Document disabling all default stylesheets and add upgrade note for 14.5.2 to 14.7.1 (aa08b2f)
+
+
+### Fixed
+
+- **typoscript:** Use nested site settings paths in traverse() so the FAQ stylesheet is included (cb5d984)
+
+
 ## [14.7.1] - 2026-10-12
 
 ### Added
