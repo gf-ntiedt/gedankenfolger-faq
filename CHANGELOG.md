@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.13.2] - 2026-10-13
+
+### Documentation
+
+- **readme:** Document disabling all default stylesheets and add upgrade note for 13.11.1 to 13.13.1 (cb949cf)
+
+
+### Fixed
+
+- **typoscript:** Use nested site settings paths in traverse() so the FAQ stylesheet is included (8cc2f7c)
+
+
 ## [13.13.1] - 2026-10-12
 
 ### Added
