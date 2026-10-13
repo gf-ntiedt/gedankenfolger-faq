@@ -8,13 +8,13 @@ page {
   }
 }
 
-[traverse(site('configuration'), 'settings/faq.css.default') == true && traverse(site('configuration'), 'settings/faq.scss.default') == false]
+[traverse(site('configuration'), 'settings/faq/css/default') == true && traverse(site('configuration'), 'settings/faq/scss/default') == false]
 page.includeCSS {
   gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
 }
 [global]
 
-[traverse(site('configuration'), 'settings/faq.scss.default') == true]
+[traverse(site('configuration'), 'settings/faq/scss/default') == true]
 page.includeCSS {
   gedankenfolger_faq = EXT:gedankenfolger_faq/Resources/Public/Scss/faq.scss
   gedankenfolger_faq.outputfile = EXT:gedankenfolger_faq/Resources/Public/Css/faq.css
